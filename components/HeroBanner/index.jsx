@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import heroImage from "../../public/images/ethPC.png";
 import LogoBox from "./LogoBox";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroBanner = () => {
   const [direction, setDirection] = useState(1);
@@ -36,14 +37,22 @@ const HeroBanner = () => {
         <div className="w-1/2 h-full relative flex justify-center items-center">
           {/* <LogoBox /> */}
           <div className="font-Moiser  text-darkBlue text-7xl backdrop-blur-xl  rounded-xl flex flex-col justify-center items-start gap-8  w-full h-[20rem] m-20 z-20 p-10">
-            <h1 className=" ">Hi, I'm</h1>
-            <span
-              className={`text-8xl overflow-hidden whitespace-nowrap  font-bold ${
-                direction === 1 ? " animate-typingForward " : " animate-delete"
-              }  border-r-4 `}
-            >
-              {display}
-            </span>
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                "Hi, I'm Ben Thorne",
+                2000, // wait 1s before replacing "Mice" with "Hamsters"
+                "Hi, I'm A Web-3 Dev",
+                2000,
+                "Welcome To My Portfolio",
+                1000,
+              ]}
+              deletionSpeed={20}
+              wrapper="span"
+              speed={2}
+              style={{ fontSize: "60px", display: "inline-block" }}
+              repeat={0}
+            />
           </div>
         </div>
 
