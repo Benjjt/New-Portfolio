@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Navbar from "../components/navigation/Navbar";
 import HeroBanner from "../components/HeroBanner";
+import TechBanner from "@/components/TechBanner";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      {/* <Navbar /> */}
+    <main className="flex min-h-screen flex-col items-center justify-between bg-background">
+      <Navbar />
       <HeroBanner />
+      <TechBanner />
     </main>
   );
 }
