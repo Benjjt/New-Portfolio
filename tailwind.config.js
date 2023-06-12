@@ -57,6 +57,7 @@ module.exports = {
         light: "#9AF0FA",
         hightlight: "#f4a261",
         darkBlue: "#6477B8",
+        brown: "#534D3D",
       },
       fontFamily: {
         Moiser: ["VT", "sans-serif"],

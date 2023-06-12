@@ -10,6 +10,8 @@ import tsLogo from "../../../public/images/logos/tsLogo.png";
 import nodeLogo from "../../../public/images/logos/nodeLogo.png";
 import gitLogo from "../../../public/images/logos/gitLogo.png";
 import figmaLogo from "../../../public/images/logos/figmaLogo.png";
+import postmanLogo from "../../../public/images/logos/postmanLogo.png";
+import insomniaLogo from "../../../public/images/logos/insomniaLogo.png";
 
 export const TechArray = [
   ethLogo,
@@ -24,4 +26,6 @@ export const TechArray = [
   nodeLogo,
   gitLogo,
   figmaLogo,
+  postmanLogo,
+  insomniaLogo,
 ];

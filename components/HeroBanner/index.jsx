@@ -10,23 +10,33 @@ const HeroBanner = () => {
     <div className="relative w-screen h-screen  flex justify-center items-center bg-highlight">
       <div className="w-full h-full flex  items-center justify-between">
         <div className="w-1/2 h-full relative flex justify-center items-center">
-          <div className="font-Moiser  text-black text-7xl backdrop-blur-xl  rounded-xl flex flex-col justify-center items-start gap-8  w-full h-[20rem] m-20 z-20 p-10">
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Hi, I'm Ben Thorne",
-                2000, // wait 1s before replacing "Mice" with "Hamsters"
-                "Hi, I'm A Web-3 Dev",
-                2000,
-                "Welcome To My Portfolio",
-                1000,
-              ]}
-              deletionSpeed={20}
-              wrapper="span"
-              speed={2}
-              style={{ fontSize: "60px", display: "inline-block" }}
-              repeat={0}
-            />
+          <div className="font-Moiser shadow-xl bg-white/80  text-black  border-black border-2 text-7xl backdrop-blur-xl  rounded-xl flex flex-col justify-start items-start gap-8  w-full h-[20rem] m-20 z-20 ">
+            <div className="w-full h-[2rem] bg-darkBlue rounded-t-xl border-b-black border-2 flex justify-start  gap-2 px-4 items-center">
+              <div className="w-4 h-4 rounded-full bg-white" />
+              <div className="w-4 h-4 rounded-full bg-white" />
+              <div className="w-4 h-4 rounded-full bg-white" />
+            </div>
+            <div className="p-8">
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "Hi, I'm Ben Thorne",
+                  2000, // wait 1s before replacing "Mice" with "Hamsters"
+                  "Hi, I'm A Web-3 Dev",
+                  2000,
+                  "Welcome To My Portfolio",
+                  1000,
+                ]}
+                deletionSpeed={20}
+                wrapper="span"
+                speed={2}
+                style={{
+                  fontSize: "60px",
+                  display: "inline-block",
+                }}
+                repeat={0}
+              />
+            </div>
           </div>
         </div>
 
