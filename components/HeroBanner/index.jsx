@@ -6,6 +6,7 @@ import LogoBox from "./LogoBox";
 import { TypeAnimation } from "react-type-animation";
 import { FaFileDownload } from "react-icons/fa";
 import folderIcon from "../../public/images/logos/open-folder.png";
+import smile from "../../public/images/logos/smile.png";
 
 const HeroBanner = () => {
   const [currentTab, setCurrentTab] = useState(1);
@@ -26,10 +27,16 @@ const HeroBanner = () => {
                   onClick={() => {
                     setCurrentTab(1);
                   }}
-                  className={`h-[2.5rem] w-[6rem] bg-white rounded-t-lg self-end text-base flex justify-start items-center p-2 ${
-                    currentTab === 1 ? "border-b-0 border-r-0" : "border-b-2"
-                  }  border-black border-l-2 border-r-2 border-t-2`}
-                ></span>
+                  className={`h-[2.5rem] w-[6rem] bg-white rounded-t-lg self-end text-base flex justify-center items-center p-2 ${
+                    currentTab === 1
+                      ? "border-b-0 border-r-0"
+                      : "border-b-2 hover:cursor-pointer"
+                  }  border-black border-l-2 border-t-2`}
+                >
+                  <span className="p-1 border border-black rounded-lg ">
+                    <Image className="" src={smile} width={15} height={15} />
+                  </span>
+                </span>
                 <span
                   onClick={() => {
                     setCurrentTab(2);
@@ -72,14 +79,14 @@ const HeroBanner = () => {
                   repeat={0}
                 />
               ) : (
-                <div className="flex flex-col  gap-8 h-full w-full justify-evenly items-center ">
+                <div className="flex flex-col  gap-8 h-full w-full justify-evenly items-start ">
                   <span className="text-[60px]">Download my CV</span>
                   <span className="p-2 border border-black rounded-lg hover:cursor-pointer">
                     <Image
                       className=""
                       src={folderIcon}
-                      width={50}
-                      height={50}
+                      width={40}
+                      height={40}
                     />
                   </span>
                 </div>
