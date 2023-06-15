@@ -79,7 +79,22 @@ const HeroBanner = () => {
                 />
               ) : (
                 <div className="flex flex-col  gap-8 h-full w-full justify-evenly items-start ">
-                  <span className="text-[60px]">Download my CV</span>
+                  {/* <span className="text-[60px]">Download my CV</span> */}
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed out once, initially
+                      "Download my CV",
+                      2000, // wait 1s before replacing "Mice" with "Hamsters"
+                    ]}
+                    deletionSpeed={20}
+                    wrapper="span"
+                    speed={2}
+                    style={{
+                      fontSize: "60px",
+                      display: "inline-block",
+                    }}
+                    repeat={0}
+                  />
                   <span className="p-2 border border-black rounded-lg hover:cursor-pointer">
                     <Image
                       className=""
