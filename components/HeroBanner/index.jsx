@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import heroImage from "../../public/images/ethPC.png";
 import LogoBox from "./LogoBox";
 import { TypeAnimation } from "react-type-animation";
 import { FaFileDownload } from "react-icons/fa";
@@ -62,7 +61,7 @@ const HeroBanner = () => {
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
-                    "Hi, I'm Ben Thorne",
+                    "Hi, I'm Ben",
                     2000, // wait 1s before replacing "Mice" with "Hamsters"
                     "Hi, I'm A Web Dev",
                     2000,
@@ -96,7 +95,7 @@ const HeroBanner = () => {
         </div>
 
         <div style={{ zIndex: "99" }} className="w-1/2 relative ">
-          <div className="absolute overflow-hidden -right-[10rem] -top-[25rem]">
+          {/* <div className="absolute overflow-hidden -right-[10rem] -top-[25rem]">
             <div className="h-1/4 w-1/4 absolute  bg-light blur-2xl rounded-2xl animate-pulse left-1/4 top-1/3 " />
             <Image
               src={heroImage}
@@ -104,7 +103,7 @@ const HeroBanner = () => {
               height={1000}
               alt="Artist: William Tempest"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

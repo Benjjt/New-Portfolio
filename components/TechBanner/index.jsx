@@ -15,10 +15,10 @@ const TechBanner = () => {
     <Marquee
       pauseOnHover={true}
       autoFill={true}
-      className="flex justify-evenly items-center   overflow-hidden h-[10rem] -mt-32 w-screen "
+      className="flex justify-evenly items-center   overflow-hidden h-[10rem] -mt-32 min-w-fit "
     >
       {TechArray.map((item, index) => {
-        return <TechItem key={index} logo={item} />;
+        return <TechItem key={index} logo={item.image} alt={item.alt} />;
       })}
     </Marquee>
   );

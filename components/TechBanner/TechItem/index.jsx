@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-const TechItem = ({ logo, width = 50, height = 50 }) => {
+const TechItem = ({ logo, width = 50, height = 50, alt }) => {
   return (
     <div className="w-[6rem] h-[6rem] rounded-xl flex justify-center items-center mx-4  bg-white  border-2 border-black  -z-10">
-      <Image src={logo} width={width} height={height} />
+      <Image alt={alt} src={logo} width={width} height={height} />
     </div>
   );
 };
