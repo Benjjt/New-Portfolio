@@ -17,7 +17,7 @@ module.exports = {
         brown: "#534D3D",
       },
       fontFamily: {
-        Moiser: ["VT", "sans-serif"],
+        Moiser: ["Mona-Sans", "sans-serif"],
       },
     },
   },
