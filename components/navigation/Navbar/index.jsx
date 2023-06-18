@@ -1,13 +1,25 @@
 import React from "react";
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import bensPortfolioDark from "../../../public/images/logos/bensPortfolioDark.png";
+import bensPortfolioEditLight from "../../../public/images/logos/bensPortfolioEditWhite.png";
 
 const Navbar = () => {
   return (
-    <div style={{ zIndex: "999" }} className=" w-screen  h-[80px] fixed">
-      <div className=" z-50 flex justify-between items-center text-dark h-full mx-[4rem] px-[2.5rem] rounded-b-xl backdrop-blur-3xl bg-transparent font-Moiser text-2xl">
-        <span className="hover:cursor-pointer">Ben Thorne's Portfolio</span>
-        <ul className="flex justify-center items-center gap-8">
+    <div
+      style={{ zIndex: "999" }}
+      className=" w-full  h-[80px] font-Archivo rounded-b-lg fixed "
+    >
+      <div className=" z-50 flex justify-between items-center h-full text-md max-w-[2000px] mx-auto px-[var(--desktop-padding)] ">
+        <Image
+          src={bensPortfolioEditLight}
+          width={175}
+          height={175}
+          alt="Ben Thorne's portfolio logo"
+          className=""
+        />
+        {/* <ul className="flex justify-center items-center gap-8 ">
           <Link target="_blank" href="https://github.com/Benjjt">
             <li className="hover:cursor-pointer">
               <FaGithubAlt />
@@ -21,11 +33,17 @@ const Navbar = () => {
               <FaLinkedinIn />
             </li>
           </Link>
-        </ul>
-        <ul className="flex justify-center items-center gap-8">
-          <li className="hover:cursor-pointer">About</li>
-          <li className="hover:cursor-pointer">Projects</li>
-          <li className="hover:cursor-pointer">Contact</li>
+        </ul> */}
+        <ul className="flex justify-center items-center gap-8  text-md">
+          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
+            <span className="font-[800] ">1 .</span>About
+          </li>
+          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
+            <span className="font-[800] ">2 .</span>Projects
+          </li>
+          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
+            <span className="font-[800] ">3 .</span>Contact
+          </li>
         </ul>
       </div>
     </div>

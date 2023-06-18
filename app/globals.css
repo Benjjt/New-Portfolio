@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --desktop-padding: 42px;
+  --desktop-padding: 6rem;
   --desktop-maxWidth: 2000px
 }
 
 body {
   overflow-x: hidden;
-  font-family: "Mona-Sans";
+  font-family: "Archivo";
 }
 
 
 
 @font-face {
-  font-family: "Mona-Sans";
+  font-family: "Archivo";
   font-weight: 100 900;
-  src: local(''), url("/fonts/Mona-Sans.ttf");
+  src: local(''), url("/fonts/Archivo.ttf");
 }
