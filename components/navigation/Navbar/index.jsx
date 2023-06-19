@@ -1,52 +1,87 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import bensPortfolioDark from "../../../public/images/logos/bensPortfolioDark.png";
 import bensPortfolioEditLight from "../../../public/images/logos/bensPortfolioEditWhite.png";
+import { animated, useTransition } from "react-spring";
+import { Link as ReactLink } from "react-scroll";
 
 const Navbar = () => {
-  return (
-    <div
-      style={{ zIndex: "999" }}
-      className=" w-full  h-[80px] font-Archivo rounded-b-lg fixed "
-    >
-      <div className=" z-50 flex justify-between items-center h-full text-md max-w-[2000px] mx-auto px-[var(--desktop-padding)] ">
-        <Image
-          src={bensPortfolioEditLight}
-          width={175}
-          height={175}
-          alt="Ben Thorne's portfolio logo"
-          className=""
-        />
-        {/* <ul className="flex justify-center items-center gap-8 ">
-          <Link target="_blank" href="https://github.com/Benjjt">
-            <li className="hover:cursor-pointer">
-              <FaGithubAlt />
-            </li>
-          </Link>
-          <Link
-            target="_blank"
-            href="https://www.linkedin.com/in/benjamin-thorne101/"
-          >
-            <li className="hover:cursor-pointer">
-              <FaLinkedinIn />
-            </li>
-          </Link>
-        </ul> */}
-        <ul className="flex justify-center items-center gap-8  text-md">
-          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
-            <span className="font-[800] ">1 .</span>About
-          </li>
-          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
-            <span className="font-[800] ">2 .</span>Projects
-          </li>
-          <li className="hover:cursor-pointer flex justify-start items-end gap-2">
-            <span className="font-[800] ">3 .</span>Contact
-          </li>
-        </ul>
-      </div>
-    </div>
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const navBarTransitions = useTransition(show, {
+    from: { opacity: 0, y: -50, zIndex: "9000" },
+    enter: { opacity: 1, y: 0, zIndex: "9000" },
+    leave: { opacity: 0, y: -50, zIndex: "9000" },
+    delay: show ? 0 : 400,
+  });
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
+  return navBarTransitions(
+    (style, item) =>
+      item && (
+        <animated.div
+          style={style}
+          className=" w-full  h-[80px] font-Archivo  fixed   flex justify-center items-center  "
+        >
+          <div className=" z-50 flex justify-between items-center w-full h-full text-md max-w-[2000px] px-[var(--desktop-padding)]  bg-dark   rounded-b-lg  ">
+            <Image
+              src={bensPortfolioEditLight}
+              width={175}
+              height={175}
+              alt="Ben Thorne's portfolio logo"
+              className=""
+            />
+
+            <ul className="flex justify-center items-center gap-8  text-md">
+              <ReactLink
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to="about"
+                className="hover:cursor-pointer hover:text-highlight flex justify-start items-end gap-2 transition-all"
+              >
+                <span className="font-[800] ">1 .</span>About
+              </ReactLink>
+              <li className="hover:cursor-pointer hover:text-highlight  flex justify-start items-end gap-2 transition-all">
+                <span className="font-[800] ">2 .</span>Projects
+              </li>
+              <li className="hover:cursor-pointer hover:text-highlight  flex justify-start items-end gap-2 transition-all">
+                <span className="font-[800] ">3 .</span>Contact
+              </li>
+            </ul>
+          </div>
+        </animated.div>
+      )
   );
 };
 

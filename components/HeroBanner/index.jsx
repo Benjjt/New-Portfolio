@@ -8,12 +8,16 @@ import folderIcon from "../../public/images/logos/open-folder.png";
 import smile from "../../public/images/logos/smile.png";
 import background from "../../public/images/backgroundImage.jpg";
 import crazybackground from "../../public/images/crazyBG.jpg";
+import { animated, useSpring } from "react-spring";
 
 const HeroBanner = () => {
-  const [currentTab, setCurrentTab] = useState(1);
-
+  const props = useSpring({
+    from: { opacity: 0, x: -100 },
+    to: { opacity: 1, x: 0 },
+    delay: 1800,
+  });
   return (
-    <div className="relative w-screen h-screen  flex justify-center items-center bg-highlight font-Archivo ">
+    <div className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden ">
       <div className="w-full h-full flex  items-center justify-start  px-[var(--desktop-padding)] ">
         <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
           <TypeAnimation
@@ -36,10 +40,19 @@ const HeroBanner = () => {
             }}
             repeat={0}
           />
-          <p className="text-3xl leading-10 text-light/60">
-            Welcome to my my portfolio, I'm a web-3 developer based in London
-            currently working for canVERSE.
-          </p>
+          <animated.p
+            style={props}
+            className="text-lg leading-10 text-light/60 max-w-[70ch] "
+          >
+            I'm a London-based Web Developer who specialises is creating
+            exceptional digital experiences. Currently, I am a developer at{" "}
+            <span className="text-highlight">
+              <a target="_blank" href="https://canverse.io">
+                canVERSE
+              </a>
+            </span>{" "}
+            focused on building accessible Web-3 tools for NFT gaming.
+          </animated.p>
         </div>
       </div>
     </div>
