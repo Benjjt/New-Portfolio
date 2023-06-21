@@ -14,7 +14,7 @@ const PersistentLinks = () => {
   return (
     <animated.div
       style={props}
-      className="fixed bottom-[var(--desktop-padding)] right-[var(--desktop-padding)] flex flex-col gap-8"
+      className="fixed bottom-[4rem] right-[var(--desktop-padding)] flex flex-col gap-8"
     >
       <span className="border border-light rotate-90" />
       <FaGithubAlt className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
