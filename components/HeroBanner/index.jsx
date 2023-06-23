@@ -8,18 +8,30 @@ import folderIcon from "../../public/images/logos/open-folder.png";
 import smile from "../../public/images/logos/smile.png";
 import background from "../../public/images/backgroundImage.jpg";
 import crazybackground from "../../public/images/crazyBG.jpg";
-import { animated, useSpring } from "react-spring";
+import { animated, useSpring, useInView } from "@react-spring/web";
 
 const HeroBanner = () => {
+  const [ref, inView] = useInView();
+
   const props = useSpring({
     from: { opacity: 0, x: -100 },
     to: { opacity: 1, x: 0 },
     delay: 1800,
   });
+
+  const lineProps = useSpring({
+    from: { maxHeight: inView ? 1 : 100 },
+    to: { maxHeight: inView ? 100 : 1 },
+    config: {
+      friction: 100,
+      velocity: inView ? 10 : 100,
+    },
+  });
+
   return (
     <div className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden ">
-      <div className="w-full h-full flex  items-center justify-start  px-[var(--desktop-padding)] ">
-        <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
+      <div className="w-full h-full flex  items-end justify-start  px-[var(--desktop-padding)] ">
+        <div className="border h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -42,7 +54,7 @@ const HeroBanner = () => {
           />
           <animated.p
             style={props}
-            className="text-lg leading-10 text-light/60 max-w-[70ch] "
+            className="text-lg leading-10 text-light/70 max-w-[70ch] "
           >
             I'm a London-based Web Developer who specialises is creating
             exceptional digital experiences. Currently, I am a developer at{" "}
@@ -53,6 +65,13 @@ const HeroBanner = () => {
             </span>{" "}
             focused on building accessible Web-3 tools for NFT gaming.
           </animated.p>
+          <animated.div
+            ref={ref}
+            style={lineProps}
+            className="w-[2px] h-full bg-gradient-to-b from-white to-highlight rounded-lg"
+          >
+            <div className="w-[4px] h-full bg-gradient-to-b from-white to-highlight blur-md rounded-lg " />
+          </animated.div>
         </div>
       </div>
     </div>

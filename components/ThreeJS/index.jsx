@@ -10,7 +10,7 @@ const ThreeJS = () => {
       shadows
       className="w-full h-full backdrop-blur-xl hover:cursor-pointer "
       camera={{
-        position: [-30, 5, 5],
+        position: [-50, 5, 5],
       }}
     >
       <ambientLight intensity={0.5} />

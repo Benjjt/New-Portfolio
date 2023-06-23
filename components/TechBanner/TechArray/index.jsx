@@ -16,12 +16,6 @@ import openAILogo from "../../../public/images/logos/openAILogo.png";
 
 export const TechArray = [
   {
-    image: ethLogo,
-    alt: "Ethereum Logo",
-    webURL: "https://ethereum.org/en/",
-    techName: "Ethereum",
-  },
-  {
     image: nextjs,
     alt: "Next.js Logo",
     webURL: "https://nextjs.org/",

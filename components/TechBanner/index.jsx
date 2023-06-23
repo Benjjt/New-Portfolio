@@ -12,7 +12,7 @@ const TechBanner = () => {
   }, [TechArray]);
 
   return (
-    <div className="flex justify-evenly w-full items-center h-[10rem] -mt-32 overflow-hidden z-20 ">
+    <div className="flex justify-evenly w-full items-center   ">
       {TechArray.map((item, index) => {
         return <TechItem key={index} logo={item.image} alt={item.alt} />;
       })}

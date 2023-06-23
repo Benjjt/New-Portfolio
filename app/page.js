@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Navbar from "../components/navigation/Navbar";
 import HeroBanner from "../components/HeroBanner";
-import PersistentLinks from "@/components/navigation/PersistentLinks";
-import TechBanner from "@/components/TechBanner";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import ThreeJS from "@/components/ThreeJS";
+import PersistentLinks from "../components/navigation/PersistentLinks";
+import About from "../components/About";
+import Projects from "../components/Projects";
 import background from "../public/images/backgroundImage.jpg";
 
 export default function Home() {

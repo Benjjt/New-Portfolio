@@ -1,18 +1,74 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import GraphicCard from "./GraphicCard";
+import TechBanner from "../TechBanner";
+import { BiUser } from "react-icons/bi";
+import {
+  animated,
+  useTransition,
+  useSpring,
+  useInView,
+} from "@react-spring/web";
 
 const About = () => {
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
+
+  const props = useSpring({
+    from: { maxHeight: inView ? 1 : window.innerHeight },
+    to: { maxHeight: inView ? window.innerHeight : 1 },
+    config: {
+      friction: 200,
+      velocity: 200,
+    },
+  });
+
   return (
     <div
       name="about"
-      className="w-screen h-screen font-Archivo flex justify-start items-start bg-transparent p-[var(--desktop-padding)]"
+      className="font-Archivo flex  gap-12 p-[var(--desktop-padding)] justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
-      <div className="flex justify-center items-center w-full h-full ">
-        <div className="w-1/2 h-full  flex justify-start items-start ">
-          <h2 className="text-5xl">About</h2>
+      <div className="flex flex-col justify-start items-center  h-screen gap-10 ">
+        <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
+          <div className="w-full  h-full absolute bg-highlight/50 blur-lg rounded-full bottom-0 left-0" />
+          <BiUser className="w-8 h-8 z-20" />
         </div>
-        <div className="w-1/2 h-full  flex justify-center items-center ">
-          <GraphicCard />
+
+        <animated.div
+          ref={ref}
+          style={props}
+          className="w-[2px] h-full bg-gradient-to-b from-highlight to-cyan-500   rounded-lg"
+        >
+          <div className="w-[4px] h-full bg-gradient-to-b from-highlight to-cyan-500 blur-md rounded-lg " />
+        </animated.div>
+      </div>
+      <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
+        <div className="flex justify-start items-center w-full h-full ">
+          <div className="w-full  flex flex-col justify-start items-start ">
+            <div className="flex justify-start items-start gap-8">
+              <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
+                <h2
+                  onClick={() => setLineActive(!lineActive)}
+                  className="text-3xl font-bold"
+                >
+                  About
+                </h2>
+                <p className="text-5xl max-w-[30ch]">
+                  <span className="text-highlight">
+                    High-quality software development{" "}
+                  </span>
+                  producing unique and powerful user experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative flex w-full   h-[30rem] justify-start items-center gap-8 ">
+          <GraphicCard type={"three"} />
+          <GraphicCard type={"info"} />
         </div>
       </div>
     </div>
