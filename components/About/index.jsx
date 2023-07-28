@@ -18,8 +18,8 @@ const About = () => {
   }, [inView]);
 
   const props = useSpring({
-    from: { maxHeight: inView ? 1 : window.innerHeight },
-    to: { maxHeight: inView ? window.innerHeight : 1 },
+    from: { maxHeight: inView ? 1 : 1000 },
+    to: { maxHeight: inView ? 1000 : 1 },
     config: {
       friction: 200,
       velocity: 200,
@@ -29,9 +29,12 @@ const About = () => {
   return (
     <div
       name="about"
-      className="font-Archivo flex  gap-12 p-[var(--desktop-padding)] justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex  gap-12 p-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
-      <div className="flex flex-col justify-start items-center  h-screen gap-10 ">
+      <div className="flex flex-col justify-start items-center  h-screen gap-10 relative ">
+        <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />
+        <div className="absolute border-l border-white h-[2rem] -top-16 w-[4px] bg-gradient-to-b from-white to-highlight blur-md " />
+
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
           <div className="w-full  h-full absolute bg-highlight/50 blur-lg rounded-full bottom-0 left-0" />
           <BiUser className="w-8 h-8 z-20" />

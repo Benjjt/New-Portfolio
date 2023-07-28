@@ -19,19 +19,10 @@ const HeroBanner = () => {
     delay: 1800,
   });
 
-  const lineProps = useSpring({
-    from: { maxHeight: inView ? 1 : 100 },
-    to: { maxHeight: inView ? 100 : 1 },
-    config: {
-      friction: 100,
-      velocity: inView ? 10 : 100,
-    },
-  });
-
   return (
     <div className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden ">
       <div className="w-full h-full flex  items-end justify-start  px-[var(--desktop-padding)] ">
-        <div className="border h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
+        <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -65,13 +56,6 @@ const HeroBanner = () => {
             </span>{" "}
             focused on building accessible Web-3 tools for NFT gaming.
           </animated.p>
-          <animated.div
-            ref={ref}
-            style={lineProps}
-            className="w-[2px] h-full bg-gradient-to-b from-white to-highlight rounded-lg"
-          >
-            <div className="w-[4px] h-full bg-gradient-to-b from-white to-highlight blur-md rounded-lg " />
-          </animated.div>
         </div>
       </div>
     </div>
