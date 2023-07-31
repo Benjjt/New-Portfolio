@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import me from "../../../../public/images/me.jpeg";
-import { IoSchoolOutline, IoCodeSlashOutline } from "react-icons/io5";
+import {
+  IoSchoolOutline,
+  IoCodeSlashOutline,
+  IoHappyOutline,
+} from "react-icons/io5";
+import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
+import { AiOutlineFilePdf } from "react-icons/ai";
 
 const InfoCard = () => {
   const [currentlyOpen, setCurrentlyOpen] = useState(1);
   return (
-    <div className="w-full h-full flex flex-col   p-8  gap-6 justify-between">
+    <div className="w-full h-full flex flex-col   p-8  gap-12 justify-between items-start">
       <div className="w-full flex justify-between items-center">
         <div className="flex  justify-start items-start gap-4  ">
           <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-white border-white border-2 relative overflow-hidden">
@@ -34,7 +40,7 @@ const InfoCard = () => {
                   : "text-light/50 border  border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
               }`}
             >
-              Experience
+              Education
             </li>
             <li
               onClick={() => {
@@ -46,14 +52,15 @@ const InfoCard = () => {
                   : "text-light/50 border border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
               }`}
             >
-              About Me
+              Work Experience
             </li>
           </ul>
         </div>
       </div>
-      {currentlyOpen === 1 ? (
-        <div className="w-full h-full  flex justify-evenly gap-8 ">
-          <div className="w-1/2  flex flex-col justify-start items-start gap-2">
+
+      <div className="w-full h-full  flex justify-evenly gap-8  ">
+        {currentlyOpen === 1 ? (
+          <div className="w-full  flex flex-col justify-start items-start gap-2">
             <span className="font-bold flex justify-start items-center gap-2">
               <IoSchoolOutline className="w-6 h-6" />
               <span className="text-xl">Education</span>
@@ -85,7 +92,8 @@ const InfoCard = () => {
               </li>
             </ul>
           </div>
-          <div className="w-1/2  flex flex-col gap-2   ">
+        ) : (
+          <div className="w-full  flex flex-col gap-2   ">
             <span className="font-bold flex justify-start items-center gap-2">
               <IoCodeSlashOutline className="w-6 h-6" />
               <span className="text-xl">Work Experience</span>
@@ -115,10 +123,8 @@ const InfoCard = () => {
               </li>
             </ul>
           </div>
-        </div>
-      ) : (
-        ""
-      )}
+        )}
+      </div>
     </div>
   );
 };

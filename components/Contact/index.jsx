@@ -13,7 +13,7 @@ import {
 } from "@react-spring/web";
 import { BsWindowStack } from "react-icons/bs";
 
-const Projects = () => {
+const Contact = () => {
   const [ref, inView] = useInView();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="font-Archivo flex bg-dark  gap-12 px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex bg-dark border-red-500 border-4  gap-12 px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
       <div className="flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
@@ -56,12 +56,11 @@ const Projects = () => {
                   onClick={() => setLineActive(!lineActive)}
                   className="text-3xl font-bold"
                 >
-                  Projects
+                  Contact
                 </h2>
                 <p className="text-5xl max-w-[30ch]">
-                  <span className="text-cyan-500">A collection of work </span>
+                  <span className="text-cyan-500">Get in touch </span>
                   <br />
-                  showcasing a variety of tools and tech stacks.
                 </p>
               </div>
             </div>
@@ -70,10 +69,7 @@ const Projects = () => {
         <div className="w-full h-fit gap-8 grid grid-cols-3">
           {projectInfo.map((project) => {
             return (
-              <div
-                key={project.title}
-                className="w-full h-[12rem]  flex justify-center items-center"
-              >
+              <div className="w-full h-[12rem]  flex justify-center items-center">
                 <div className="w-full h-full gap-2 flex flex-col justify-between items-start border border-white/50 rounded-xl p-6">
                   <div className="flex flex-col justify-start items-start gap-4 w-full">
                     <div className="flex justify-between items-center w-full">
@@ -108,10 +104,7 @@ const Projects = () => {
                   <div className="flex justify-between w-full items-center gap-4 flex-wrap text-light/50 text-sm">
                     {project.technology.map((tech, index) => {
                       return (
-                        <span
-                          key={tech.name}
-                          className="flex justify-start items-center gap-1"
-                        >
+                        <span className="flex justify-start items-center gap-1">
                           <div
                             className={` w-2 h-2 rounded-full border border-${tech.color}`}
                           />
@@ -131,4 +124,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Contact;

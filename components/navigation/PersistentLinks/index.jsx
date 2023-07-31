@@ -2,7 +2,7 @@
 import React from "react";
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineFilePdf } from "react-icons/ai";
-import { animated, useSpring } from "react-spring";
+import { animated, useSpring } from "@react-spring/web";
 
 const PersistentLinks = () => {
   const props = useSpring({

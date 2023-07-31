@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import bensPortfolioDark from "../../../public/images/logos/bensPortfolioDark.png";
 import bensPortfolioEditLight from "../../../public/images/logos/bensPortfolioEditWhite.png";
-import { animated, useTransition } from "react-spring";
+import { animated, useTransition } from "@react-spring/web";
 import { Link as ReactLink } from "react-scroll";
 
 const Navbar = () => {
@@ -65,16 +65,24 @@ const Navbar = () => {
               <ReactLink
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 to="about"
                 className="hover:cursor-pointer hover:text-highlight flex justify-start items-end gap-2 transition-all"
               >
                 <span className="font-[800] ">1 .</span>About
               </ReactLink>
-              <li className="hover:cursor-pointer hover:text-highlight  flex justify-start items-end gap-2 transition-all">
+              <ReactLink
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                to="projects"
+                className="hover:cursor-pointer hover:text-highlight flex justify-start items-end gap-2 transition-all"
+              >
                 <span className="font-[800] ">2 .</span>Projects
-              </li>
+              </ReactLink>
+
               <li className="hover:cursor-pointer hover:text-highlight  flex justify-start items-end gap-2 transition-all">
                 <span className="font-[800] ">3 .</span>Contact
               </li>

@@ -21,8 +21,8 @@ const About = () => {
     from: { maxHeight: inView ? 1 : 1000 },
     to: { maxHeight: inView ? 1000 : 1 },
     config: {
-      friction: 200,
-      velocity: 200,
+      friction: inView ? 500 : 100,
+      velocity: inView ? 100 : 1000,
     },
   });
 
@@ -49,29 +49,20 @@ const About = () => {
         </animated.div>
       </div>
       <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
-        <div className="flex justify-start items-center w-full h-full ">
-          <div className="w-full  flex flex-col justify-start items-start ">
-            <div className="flex justify-start items-start gap-8">
-              <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
-                <h2
-                  onClick={() => setLineActive(!lineActive)}
-                  className="text-3xl font-bold"
-                >
-                  About
-                </h2>
-                <p className="text-5xl max-w-[30ch]">
-                  <span className="text-highlight">
-                    High-quality software development{" "}
-                  </span>
-                  producing unique and powerful user experiences.
-                </p>
-              </div>
-            </div>
+        <div className="flex justify-start items-start gap-8">
+          <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
+            <h2
+              onClick={() => setLineActive(!lineActive)}
+              className="text-3xl font-bold"
+            >
+              About
+            </h2>
+            <p className="text-5xl max-w-[30ch]">
+              <span className="text-cyan-500">A collection of work </span>
+              <br />
+              showcasing a variety of tools and tech stacks.
+            </p>
           </div>
-        </div>
-        <div className="relative flex w-full   h-[30rem] justify-start items-center gap-8 ">
-          <GraphicCard type={"three"} />
-          <GraphicCard type={"info"} />
         </div>
       </div>
     </div>

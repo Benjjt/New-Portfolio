@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Marquee from "react-fast-marquee";
 import { TechArray } from "./TechArray";
 import Image from "next/image";
 import TechItem from "./TechItem";

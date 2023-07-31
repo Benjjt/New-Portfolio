@@ -5,6 +5,7 @@ import PersistentLinks from "../components/navigation/PersistentLinks";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import background from "../public/images/backgroundImage.jpg";
+import Contact from "../components/About";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
         </div>
         <Navbar />
         <HeroBanner />
-        <PersistentLinks />
+        {/* <PersistentLinks /> */}
         {/* <ThreeJS /> */}
         {/* <TechBanner /> */}
         <About />
         <Projects />
+        <Contact />
       </div>
     </main>
   );

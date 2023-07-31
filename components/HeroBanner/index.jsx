@@ -1,23 +1,15 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import LogoBox from "./LogoBox";
 import { TypeAnimation } from "react-type-animation";
-import { FaFileDownload } from "react-icons/fa";
-import folderIcon from "../../public/images/logos/open-folder.png";
-import smile from "../../public/images/logos/smile.png";
-import background from "../../public/images/backgroundImage.jpg";
-import crazybackground from "../../public/images/crazyBG.jpg";
-import { animated, useSpring, useInView } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 const HeroBanner = () => {
-  const [ref, inView] = useInView();
-
-  const props = useSpring({
-    from: { opacity: 0, x: -100 },
-    to: { opacity: 1, x: 0 },
-    delay: 1800,
+  const spring = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
   });
+
+  console.log(spring);
 
   return (
     <div className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden ">
@@ -43,8 +35,8 @@ const HeroBanner = () => {
             }}
             repeat={0}
           />
-          <animated.p
-            style={props}
+          <animated.div
+            style={spring}
             className="text-lg leading-10 text-light/70 max-w-[70ch] "
           >
             I'm a London-based Web Developer who specialises is creating
@@ -55,7 +47,7 @@ const HeroBanner = () => {
               </a>
             </span>{" "}
             focused on building accessible Web-3 tools for NFT gaming.
-          </animated.p>
+          </animated.div>
         </div>
       </div>
     </div>

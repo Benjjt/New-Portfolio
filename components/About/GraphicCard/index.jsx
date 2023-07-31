@@ -10,8 +10,8 @@ const GraphicCard = ({ type }) => {
   return (
     <div
       className={`backdrop-blur-xl h-full ${
-        type === "three" ? "w-1/3 max-w-[30rem]" : "w-2/3"
-      }  border border-white/50 font-Archivo rounded-xl flex flex-col justify-start items-center `}
+        type === "three" ? "w-1/3 max-w-[30rem] " : "w-2/3 md:w-full "
+      }  border border-white/50 font-Archivo rounded-xl flex  flex-col justify-start items-center  `}
     >
       <div className="flex justify-between items-center w-full h-[4rem] p-4 border-b border-white/50 ">
         <div className="flex justify-start items-center gap-2">
