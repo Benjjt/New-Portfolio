@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { animated, useSpring } from "@react-spring/web";
+import Links from "../navigation/Links";
 
 const HeroBanner = () => {
   const spring = useSpring({
@@ -12,7 +13,10 @@ const HeroBanner = () => {
   console.log(spring);
 
   return (
-    <div className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden ">
+    <div
+      name="home"
+      className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
+    >
       <div className="w-full h-full flex  items-end justify-start  px-[var(--desktop-padding)] ">
         <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
           <TypeAnimation
@@ -50,6 +54,7 @@ const HeroBanner = () => {
           </animated.div>
         </div>
       </div>
+      <Links type={"top"} />
     </div>
   );
 };

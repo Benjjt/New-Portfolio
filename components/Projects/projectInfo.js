@@ -9,9 +9,9 @@ const projectInfo = [
     livesiteAvailable: true,
     siteLink: "https://github.com/Benjjt/sound-sauce",
     technology: [
-      { name: "React", color: "reactColor" },
-      { name: "Three.js", color: "threeColor" },
-      { name: "Sass", color: "sassColor" },
+      { name: "React", color: "#0a7ea3" },
+      { name: "Three.js", color: "#1a82c3" },
+      { name: "Sass", color: "#bf4080" },
     ],
   },
   {
@@ -20,11 +20,11 @@ const projectInfo = [
     codeAvailable: false,
     livesiteAvailable: true,
     siteLink: "https://github.com/Benjjt/sound-sauce",
-    description: "Sort and Filter NFTs based on thier attributes.",
+    description: "Sort and Filter NFTs based on their attributes.",
     technology: [
-      { name: "Tailwind", color: "tailwindColor" },
-      { name: "Typescript", color: "typescriptColor" },
-      { name: "Next.js", color: "nextjsColor" },
+      { name: "Tailwind", color: "#0ba5e9" },
+      { name: "Typescript", color: "#3077c6" },
+      { name: "Next.js", color: "#ededed" },
     ],
   },
   {
@@ -34,10 +34,10 @@ const projectInfo = [
     livesiteAvailable: true,
     siteLink: "https://github.com/Benjjt/sound-sauce",
     description:
-      "Hackathon project that uses a thesuarus API to change your phrase",
+      "Hackathon project that uses a thesaurus API to change your phrase",
     technology: [
-      { name: "React", color: "reactColor" },
-      { name: "Sass", color: "sassColor" },
+      { name: "React", color: "#0a7ea3" },
+      { name: "Sass", color: "#bf4080" },
     ],
   },
   {
@@ -48,9 +48,9 @@ const projectInfo = [
     description:
       "Web-3 Gaming website with custom auth, wallet connection, and crypto API.",
     technology: [
-      { name: "Tailwind", color: "tailwindColor" },
-      { name: "Typescript", color: "typescriptColor" },
-      { name: "Next.js", color: "nextjsColor" },
+      { name: "Tailwind", color: "#0ba5e9" },
+      { name: "Typescript", color: "#3077c6" },
+      { name: "Next.js", color: "#ededed" },
     ],
   },
   {
@@ -60,9 +60,9 @@ const projectInfo = [
     siteLink: "https://github.com/Benjjt/sound-sauce",
     description: "3D Model Viewer for canCATs NFT collection",
     technology: [
-      { name: "Tailwind", color: "tailwindColor" },
-      { name: "Next.js", color: "nextjsColor" },
-      { name: "Three.js", color: "threeColor" },
+      { name: "Tailwind", color: "#0ba5e9" },
+      { name: "Next.js", color: "#ededed" },
+      { name: "Three.js", color: "#1a82c3" },
     ],
   },
   {
@@ -73,9 +73,9 @@ const projectInfo = [
     gitHubLink: "https://github.com/Benjjt/sound-sauce",
     description: "My first website! A simple Spotify clone.",
     technology: [
-      { name: "HTML", color: "htmlColor" },
-      { name: "CSS", color: "cssColor" },
-      { name: "Javascript", color: "javascriptColor" },
+      { name: "HTML", color: "#e54b20" },
+      { name: "CSS", color: "#264de3" },
+      { name: "Javascript", color: "#f7e017" },
     ],
   },
 ];

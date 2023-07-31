@@ -83,9 +83,16 @@ const Navbar = () => {
                 <span className="font-[800] ">2 .</span>Projects
               </ReactLink>
 
-              <li className="hover:cursor-pointer hover:text-highlight  flex justify-start items-end gap-2 transition-all">
+              <ReactLink
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                to="contact"
+                className="hover:cursor-pointer hover:text-highlight flex justify-start items-end gap-2 transition-all"
+              >
                 <span className="font-[800] ">3 .</span>Contact
-              </li>
+              </ReactLink>
             </ul>
           </div>
         </animated.div>

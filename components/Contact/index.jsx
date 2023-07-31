@@ -1,10 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import projectInfo from "./projectInfo";
-import { FaGithubAlt } from "react-icons/fa";
-import { AiOutlineExpandAlt } from "react-icons/ai";
-import { BiUser } from "react-icons/bi";
-import Link from "next/link";
 import {
   animated,
   useTransition,
@@ -12,6 +7,8 @@ import {
   useInView,
 } from "@react-spring/web";
 import { BsWindowStack } from "react-icons/bs";
+import { IoMailOpenOutline } from "react-icons/io5";
+import Links from "../navigation/Links";
 
 const Contact = () => {
   const [ref, inView] = useInView();
@@ -21,8 +18,8 @@ const Contact = () => {
   }, [inView]);
 
   const props = useSpring({
-    from: { maxHeight: inView ? 1 : 1000 },
-    to: { maxHeight: inView ? 1000 : 1 },
+    from: { maxHeight: inView ? 1 : window.innerHeight },
+    to: { maxHeight: inView ? window.innerHeight : 1 },
     config: {
       friction: inView ? 500 : 100,
       velocity: inView ? 100 : 1000,
@@ -30,21 +27,21 @@ const Contact = () => {
   });
   return (
     <div
-      name="projects"
-      className="font-Archivo flex bg-dark border-red-500 border-4  gap-12 px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
+      name="contact"
+      className="font-Archivo flex bg-dark   gap-12 px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
     >
       <div className="flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
-          <div className="w-full  h-full absolute bg-cyan-500/50 blur-lg rounded-full bottom-0 left-0" />
-          <BsWindowStack className="w-8 h-8 z-20 " />
+          <div className="w-full  h-full absolute bg-[#773fc6]/50  blur-lg rounded-full bottom-0 left-0" />
+          <IoMailOpenOutline className="w-8 h-8 z-20 " />
         </div>
 
         <animated.div
           ref={ref}
           style={props}
-          className="w-[2px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6]  rounded-lg"
+          className="w-[2px] h-full bg-gradient-to-b from-[#773fc6] to-[#773fc6]  rounded-lg"
         >
-          <div className="w-[4px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6] blur-md rounded-lg " />
+          <div className="w-[4px] h-full bg-gradient-to-b from-[#773fc6] to-[#773fc6] blur-md rounded-lg " />
         </animated.div>
       </div>
       <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
@@ -59,67 +56,15 @@ const Contact = () => {
                   Contact
                 </h2>
                 <p className="text-5xl max-w-[30ch]">
-                  <span className="text-cyan-500">Get in touch </span>
+                  <span className="text-[#773fc6] ">Get in touch </span>
                   <br />
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full h-fit gap-8 grid grid-cols-3">
-          {projectInfo.map((project) => {
-            return (
-              <div className="w-full h-[12rem]  flex justify-center items-center">
-                <div className="w-full h-full gap-2 flex flex-col justify-between items-start border border-white/50 rounded-xl p-6">
-                  <div className="flex flex-col justify-start items-start gap-4 w-full">
-                    <div className="flex justify-between items-center w-full">
-                      <span className="font-bold">{project.title}</span>
-                      <div className="flex justify-center items-center gap-2 text-sm">
-                        {project.codeAvailable && (
-                          <Link
-                            href={project.gitHubLink}
-                            target="_blank"
-                            className="text-sm  rounded-lg px-2  text-light border border-light/50 hover:border-highlight hover:cursor-pointer transition-all"
-                          >
-                            GitHub
-                          </Link>
-                        )}
-                        {project.livesiteAvailable && (
-                          <Link
-                            href={project.siteLink}
-                            target="_blank"
-                            className="text-sm  rounded-lg px-2 bg-light text-dark hover:bg-highlight hover:cursor-pointer transition-all"
-                          >
-                            Live Site
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-
-                    <span className="text-white/50 ">
-                      {project.description}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between w-full items-center gap-4 flex-wrap text-light/50 text-sm">
-                    {project.technology.map((tech, index) => {
-                      return (
-                        <span className="flex justify-start items-center gap-1">
-                          <div
-                            className={` w-2 h-2 rounded-full border border-${tech.color}`}
-                          />
-                          <span>{tech.name}</span>
-                        </span>
-                      );
-                    })}
-                    <AiOutlineExpandAlt className="ml-auto w-6 h-6" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
       </div>
+      <Links type={"bottom"} />
     </div>
   );
 };

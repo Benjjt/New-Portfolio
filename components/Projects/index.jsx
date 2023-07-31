@@ -113,8 +113,12 @@ const Projects = () => {
                           className="flex justify-start items-center gap-1"
                         >
                           <div
-                            className={` w-2 h-2 rounded-full border border-${tech.color}`}
+                            className={`w-2 h-2 rounded-full border mb-[2px]`}
+                            style={{
+                              borderColor: tech.color,
+                            }}
                           />
+
                           <span>{tech.name}</span>
                         </span>
                       );
