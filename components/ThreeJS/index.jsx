@@ -8,7 +8,7 @@ const ThreeJS = () => {
   return (
     <Canvas
       shadows
-      className="w-full h-full backdrop-blur-xl hover:cursor-pointer "
+      className="w-full h-full backdrop-blur-xl hover:cursor-pointer relative "
       camera={{
         position: [-50, 5, 5],
       }}
