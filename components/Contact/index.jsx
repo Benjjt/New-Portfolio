@@ -9,13 +9,11 @@ import {
 import { BsWindowStack } from "react-icons/bs";
 import { IoMailOpenOutline } from "react-icons/io5";
 import Links from "../navigation/Links";
+import Form from "./Form";
+import TestForm from "./TestForm";
 
 const Contact = () => {
   const [ref, inView] = useInView();
-
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
 
   const props = useSpring({
     from: { maxHeight: inView ? 1 : window.innerHeight },
@@ -44,7 +42,7 @@ const Contact = () => {
           <div className="w-[4px] h-full bg-gradient-to-b from-[#773fc6] to-[#773fc6] blur-md rounded-lg " />
         </animated.div>
       </div>
-      <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
+      <div className="font-Archivo flex flex-col gap-12  justify-start items-start w-full h-full  ">
         <div className="flex justify-start items-center w-full h-full ">
           <div className="w-full h-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
@@ -62,6 +60,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="w-1/2  h-full border border-light/50 rounded-xl">
+          <TestForm />
         </div>
       </div>
       <Links type={"bottom"} />
