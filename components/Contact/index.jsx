@@ -1,15 +1,8 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-import {
-  animated,
-  useTransition,
-  useSpring,
-  useInView,
-} from "@react-spring/web";
-import { BsWindowStack } from "react-icons/bs";
+import React from "react";
+import { animated, useSpring, useInView } from "@react-spring/web";
 import { IoMailOpenOutline } from "react-icons/io5";
 import Links from "../navigation/Links";
-import Form from "./Form";
 import TestForm from "./TestForm";
 
 const Contact = () => {
@@ -26,7 +19,7 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="font-Archivo  flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
+      className="font-Archivo bg-dark  flex gap-4  lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">

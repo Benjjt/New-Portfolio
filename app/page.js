@@ -8,9 +8,9 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen min-w-screen   text-light bg-dark ">
+    <main className="min-h-screen min-w-screen   text-light ">
       <div className=" h-full w-full relative">
-        <div className="w-full h-full absolute overflow-hidden -z-10">
+        <div className=" w-full h-full absolute overflow-hidden -z-10">
           <Image
             // style={{ objectFit: "cover" }}
             // fill="true"

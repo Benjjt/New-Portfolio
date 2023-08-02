@@ -31,7 +31,7 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="font-Archivo flex   gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex bg-dark  gap-4  lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
