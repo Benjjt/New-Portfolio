@@ -15,10 +15,10 @@ const HeroBanner = () => {
   return (
     <div
       name="home"
-      className="relative w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
+      className="relative bg-black md:bg-transparent w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
     >
-      <div className="w-full h-full flex  items-end justify-start  px-[var(--desktop-padding)] ">
-        <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">
+      <div className="w-full h-full flex justify-center items-center  md:items-end md:justify-start  px-[var(--desktop-padding)]  ">
+        <div className=" h-full relative flex gap-12 flex-col justify-center items-center md:items-start w-full md:w-2/3">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -41,7 +41,7 @@ const HeroBanner = () => {
           />
           <animated.div
             style={spring}
-            className="text-lg leading-10 text-light/70 max-w-[70ch] "
+            className="hidden text-lg leading-10 text-light/70 max-w-[70ch] "
           >
             I'm a London-based Web Developer who specialises is creating
             exceptional digital experiences. Currently, I am a developer at{" "}

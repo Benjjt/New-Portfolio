@@ -12,6 +12,13 @@ const Links = ({ type }) => {
     delay: 600,
   });
 
+  const handleDownload = () => {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = "/downloads/BenThorneCV.pdf"; // Replace this with the actual path to your PDF file
+    downloadLink.download = "BenThorneCV.pdf"; // Replace this with the desired file name
+    downloadLink.click();
+  };
+
   return (
     <animated.div
       style={props}
@@ -33,7 +40,12 @@ const Links = ({ type }) => {
       )}
       <FaGithubAlt className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
       <FaLinkedinIn className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
-      <AiOutlineFilePdf className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
+      <AiOutlineFilePdf
+        onClick={() => {
+          handleDownload();
+        }}
+        className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer"
+      />
     </animated.div>
   );
 };

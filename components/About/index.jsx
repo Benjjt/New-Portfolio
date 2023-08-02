@@ -29,7 +29,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="font-Archivo flex gap-4  lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex gap-4 bg-black md:bg-transparent lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative ">
         <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />

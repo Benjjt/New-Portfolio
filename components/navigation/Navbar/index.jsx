@@ -52,7 +52,7 @@ const Navbar = () => {
           style={style}
           className=" w-full  h-[80px] font-Archivo  fixed   flex justify-center items-center  "
         >
-          <div className=" z-50 flex justify-between items-center w-full h-full text-md max-w-[2000px] px-[var(--desktop-padding)]  bg-dark   rounded-b-lg  ">
+          <div className=" z-50 flex justify-between items-center w-full h-full text-md max-w-[2000px] px-[var(--mobile-padding)]   lg:px-[var(--desktop-padding)]  bg-dark   rounded-b-lg  ">
             <Image
               src={bensPortfolioEditLight}
               width={175}
