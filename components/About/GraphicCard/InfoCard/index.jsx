@@ -13,7 +13,7 @@ const InfoCard = () => {
   const [currentlyOpen, setCurrentlyOpen] = useState(1);
   return (
     <div className="w-full h-full flex flex-col   p-8  gap-12 justify-between items-start">
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full flex-col flex lg:flex-row justify-between items-start gap-4 lg:items-center">
         <div className="flex  justify-start items-start gap-4  ">
           <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-white border-white border-2 relative overflow-hidden">
             <Image
@@ -25,37 +25,35 @@ const InfoCard = () => {
           </div>
           <div className="flex flex-col justify-start items-start">
             <div>Benjamin Thorne</div>
-            <div className="text-white/50">benjaminjamesthorne@gmail.com</div>
+            <div className="text-white/50  ">benjaminjamesthorne@gmail.com</div>
           </div>
         </div>
-        <div>
-          <ul className="flex select-none justify-between items-center w-fit gap-4 border px-2 py-2 rounded-lg">
-            <li
-              onClick={() => {
-                setCurrentlyOpen(1);
-              }}
-              className={`px-4 py-1  rounded-md ${
-                currentlyOpen === 1
-                  ? "bg-light text-dark border border-white"
-                  : "text-light/50 border  border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
-              }`}
-            >
-              Education
-            </li>
-            <li
-              onClick={() => {
-                setCurrentlyOpen(2);
-              }}
-              className={`px-4 py-1  rounded-md ${
-                currentlyOpen === 2
-                  ? "bg-light text-dark border border-white"
-                  : "text-light/50 border border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
-              }`}
-            >
-              Work Experience
-            </li>
-          </ul>
-        </div>
+        <ul className="flex select-none justify-between items-center w-full md:w-1/2 lg:max-w-[20rem] gap-4 border px-2 py-2 rounded-lg">
+          <li
+            onClick={() => {
+              setCurrentlyOpen(1);
+            }}
+            className={`px-4 py-1 w-1/2 flex justify-center items-center  rounded-md ${
+              currentlyOpen === 1
+                ? "bg-light text-dark border border-white"
+                : "text-light/50 border  border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
+            }`}
+          >
+            Education
+          </li>
+          <li
+            onClick={() => {
+              setCurrentlyOpen(2);
+            }}
+            className={`px-4 py-1  rounded-md w-1/2 flex justify-center items-center  ${
+              currentlyOpen === 2
+                ? "bg-light text-dark border border-white"
+                : "text-light/50 border border-transparent hover:bg-dark/50 hover:cursor-pointer transition-all"
+            }`}
+          >
+            Experience
+          </li>
+        </ul>
       </div>
 
       <div className="w-full h-full  flex justify-evenly gap-8  ">

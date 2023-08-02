@@ -15,7 +15,7 @@ const Links = ({ type }) => {
   return (
     <animated.div
       style={props}
-      className="absolute bottom-[4rem] right-[var(--desktop-padding)] flex flex-col items-center gap-8 bg-dark py-8 px-4 rounded-full shadow-lg"
+      className="hidden md:flex absolute bottom-[4rem] right-[var(--desktop-padding)]  flex-col items-center gap-8 bg-dark py-8 px-4 rounded-full shadow-lg"
     >
       {type === "bottom" ? (
         <ReactLink

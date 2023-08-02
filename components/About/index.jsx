@@ -29,9 +29,9 @@ const About = () => {
   return (
     <div
       name="about"
-      className="font-Archivo flex  gap-12 p-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
-      <div className="flex flex-col justify-start items-center  h-screen gap-10 relative ">
+      <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative ">
         <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />
         <div className="absolute border-l border-white h-[2rem] -top-16 w-[4px] bg-gradient-to-b from-white to-highlight blur-md " />
 
@@ -43,7 +43,7 @@ const About = () => {
         <animated.div
           ref={ref}
           style={props}
-          className="w-[2px] h-full bg-gradient-to-b from-highlight to-cyan-500   rounded-lg"
+          className=" w-[2px] h-full bg-gradient-to-b from-highlight to-cyan-500   rounded-lg"
         >
           <div className="w-[4px] h-full bg-gradient-to-b from-highlight to-cyan-500 blur-md rounded-lg " />
         </animated.div>
@@ -59,7 +59,7 @@ const About = () => {
                 >
                   About
                 </h2>
-                <p className="text-5xl max-w-[30ch]">
+                <p className="text-3xl lg:text-5xl max-w-[30ch]">
                   <span className="text-highlight">
                     High-quality software development{" "}
                   </span>
@@ -69,7 +69,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="relative flex w-full   h-[30rem] justify-start items-center gap-8 ">
+        <div className="relative flex w-full h-full  lg:h-[30rem] justify-start items-center gap-8 ">
           <GraphicCard type={"three"} />
           <GraphicCard type={"info"} />
         </div>

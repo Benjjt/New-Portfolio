@@ -10,8 +10,10 @@ const GraphicCard = ({ type }) => {
   return (
     <div
       className={`backdrop-blur-xl h-full ${
-        type === "three" ? "w-1/3 max-w-[30rem] " : "w-2/3 md:w-full "
-      }  border border-white/50 font-Archivo rounded-xl flex  flex-col justify-start items-center  `}
+        type === "three"
+          ? "lg:w-1/3 max-w-[30rem] hidden xl:flex "
+          : "xl:w-2/3 w-full md:w-full flex "
+      }  border border-white/50 font-Archivo rounded-xl   flex-col justify-start items-center  `}
     >
       <div className="flex justify-between items-center w-full h-[4rem] p-4 border-b border-white/50 ">
         <div className="flex justify-start items-center gap-2">
@@ -34,10 +36,10 @@ const GraphicCard = ({ type }) => {
         <AiOutlinePlus className="fill-white w-4 h-4" />
       </div>
       <div className="flex w-full h-full  ">
-        <div className="  h-full w-[4rem] self-start flex flex-col justify-start items-center p-4">
+        <div className="hidden  h-full w-[4rem] self-start md:flex flex-col justify-start items-center p-4">
           <AiOutlineMenu className="fill-white w-6 h-6" />
         </div>
-        <div className="relative overflow-hidden w-full border-l border-white/50 h-full rounded-br-xl">
+        <div className="relative overflow-hidden w-full lg:border-l border-white/50 h-full rounded-br-xl">
           {type === "three" ? <ThreeJS /> : <InfoCard />}
         </div>
       </div>

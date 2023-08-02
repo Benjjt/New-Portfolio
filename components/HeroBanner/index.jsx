@@ -15,7 +15,7 @@ const HeroBanner = () => {
   return (
     <div
       name="home"
-      className="relative w-screen h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
+      className="relative w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
     >
       <div className="w-full h-full flex  items-end justify-start  px-[var(--desktop-padding)] ">
         <div className=" h-full relative flex gap-12 flex-col justify-center items-start w-2/3">

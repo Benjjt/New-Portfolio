@@ -26,9 +26,9 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="font-Archivo flex bg-dark   gap-12 px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
+      className="font-Archivo  flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
     >
-      <div className="flex flex-col justify-start items-center  h-screen gap-10 relative  ">
+      <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
           <div className="w-full  h-full absolute bg-[#773fc6]/50  blur-lg rounded-full bottom-0 left-0" />
           <IoMailOpenOutline className="w-8 h-8 z-20 " />
@@ -53,7 +53,7 @@ const Contact = () => {
                 >
                   Contact
                 </h2>
-                <p className="text-5xl max-w-[30ch]">
+                <p className="text-3xl lg:text-5xl max-w-[30ch]">
                   <span className="text-[#773fc6] ">Get in touch </span>
                   <br />
                 </p>
@@ -61,7 +61,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2  h-full border border-light/50 rounded-xl">
+        <div className="w-full lg:w-1/2  h-full border border-light/50 rounded-xl">
           <TestForm />
         </div>
       </div>

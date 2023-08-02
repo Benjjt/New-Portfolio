@@ -56,12 +56,12 @@ const Navbar = () => {
             <Image
               src={bensPortfolioEditLight}
               width={175}
-              height={175}
+              height={50}
               alt="Ben Thorne's portfolio logo"
               className=""
             />
 
-            <ul className="flex justify-center items-center gap-8  text-md">
+            <ul className=" justify-center items-center gap-8  text-md hidden md:flex">
               <ReactLink
                 spy={true}
                 smooth={true}
