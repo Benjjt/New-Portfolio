@@ -60,7 +60,7 @@ const TestForm = () => {
       action="https://api.staticforms.xyz/submit"
       method="post"
       onSubmit={handleSubmit}
-      className="w-full h-full   gap-4 flex flex-col justify-between items-start p-8"
+      className="w-full h-full   gap-8 md:gap-4 flex flex-col justify-between items-start md:p-8"
     >
       <div className="flex flex-col justify-start items-start gap-2  w-full">
         <label className="label">Name</label>
@@ -110,16 +110,16 @@ const TestForm = () => {
           required
         />
       </div>
-      <div className="flex justify-start items-center gap-2 mt-auto">
+      <div className="flex justify-start items-center gap-2 mt-auto w-full ">
         <button
-          className="bg-light transition-all text-dark px-4 py-1 rounded-md  hover:bg-[#773fc6] hover:text-light  w-[8rem]"
+          className="bg-light transition-all text-dark px-4 py-1 rounded-md  hover:bg-[#773fc6] hover:text-light w-1/2  md:w-[8rem]"
           type="submit"
         >
           Submit
         </button>
         <button
           type="reset"
-          className="bg-dark transition-all text-light px-4 py-1 rounded-md border hover:border-[#773fc6]  w-[8rem]"
+          className="bg-dark transition-all text-light px-4 py-1 rounded-md border hover:border-[#773fc6] w-1/2  md:w-[8rem]"
         >
           Clear
         </button>

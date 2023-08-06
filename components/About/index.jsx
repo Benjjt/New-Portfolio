@@ -29,7 +29,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="font-Archivo flex gap-4 bg-black md:bg-transparent lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pb-0 justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex gap-4 bg-black md:bg-transparent lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative ">
         <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />
@@ -52,7 +52,7 @@ const About = () => {
         <div className="flex justify-start items-center w-full h-full ">
           <div className="w-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
-              <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
+              <div className="w-full h-full flex flex-col  justify-start items-start gap-4 md:gap-8">
                 <h2
                   onClick={() => setLineActive(!lineActive)}
                   className="text-3xl font-bold"
@@ -60,7 +60,7 @@ const About = () => {
                   About
                 </h2>
                 <p className="text-3xl lg:text-5xl max-w-[30ch]">
-                  <span className="text-highlight">
+                  <span className="text-highlight ">
                     High-quality software development{" "}
                   </span>
                   producing unique and powerful user experiences.

@@ -12,9 +12,9 @@ import { AiOutlineFilePdf } from "react-icons/ai";
 const InfoCard = () => {
   const [currentlyOpen, setCurrentlyOpen] = useState(1);
   return (
-    <div className="w-full h-full flex flex-col   p-8  gap-12 justify-between items-start">
+    <div className="w-full h-full flex flex-col   py-8 md:p-8  gap-12 justify-between items-start">
       <div className="w-full flex-col flex lg:flex-row justify-between items-start gap-4 lg:items-center">
-        <div className="flex  justify-start items-start gap-4  ">
+        <div className="flex  justify-start item-center md:items-start gap-4  ">
           <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-white border-white border-2 relative overflow-hidden">
             <Image
               alt="Picture of Ben Smiling"
@@ -23,9 +23,9 @@ const InfoCard = () => {
               fill={true}
             />
           </div>
-          <div className="flex flex-col justify-start items-start">
-            <div>Benjamin Thorne</div>
-            <div className="text-white/50  ">benjaminjamesthorne@gmail.com</div>
+          <div className="flex flex-col justify-center items-start">
+            <div>Ben Thorne</div>
+            <div className="text-white/50    ">ben@benthorne.xyz</div>
           </div>
         </div>
         <ul className="flex select-none justify-between items-center w-full md:w-1/2 lg:max-w-[20rem] gap-4 border px-2 py-2 rounded-lg">
@@ -66,6 +66,14 @@ const InfoCard = () => {
             <ul className="flex flex-col justify-start items-start gap-4 mt-2 w-full ">
               <li className="flex flex-col justify-start items-start border-b border-cyan-500/50 w-full ">
                 <span className="font-bold">
+                  BrainStation | Data Science (Part Time)
+                </span>
+                <span className="text-white/50">
+                  AUG 2023 - OCT 2023, LONDON, UK
+                </span>
+              </li>
+              <li className="flex flex-col justify-start items-start border-b border-cyan-500/50 w-full ">
+                <span className="font-bold">
                   BrainStation | Diploma, Web Development
                 </span>
                 <span className="text-white/50">
@@ -78,14 +86,6 @@ const InfoCard = () => {
                 </span>
                 <span className="text-white/50">
                   SEP 2016 - JUN 2019, FALMOUTH, UK
-                </span>
-              </li>
-              <li className="flex flex-col justify-start items-start border-b border-cyan-500/50 w-full  ">
-                <span className="font-bold">
-                  BrainStation | Diploma, Web Development
-                </span>
-                <span className="text-white/50">
-                  JAN 2022 - APR 2022, LONDON UK
                 </span>
               </li>
             </ul>

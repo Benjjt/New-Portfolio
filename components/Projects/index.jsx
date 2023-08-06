@@ -16,22 +16,28 @@ import { BsWindowStack } from "react-icons/bs";
 const Projects = () => {
   const [ref, inView] = useInView();
 
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
+  let maxHeightFrom = 1;
+  let maxHeightTo = 1;
+
+  if (typeof window !== "undefined") {
+    // Code inside this block will only execute in the browser environment
+    maxHeightFrom = inView ? 1 : window.innerHeight;
+    maxHeightTo = inView ? window.innerHeight : 1;
+  }
 
   const props = useSpring({
-    from: { maxHeight: inView ? 1 : 1000 },
-    to: { maxHeight: inView ? 1000 : 1 },
+    from: { maxHeight: maxHeightFrom },
+    to: { maxHeight: maxHeightTo },
     config: {
       friction: inView ? 500 : 100,
       velocity: inView ? 100 : 1000,
     },
   });
+
   return (
     <div
       name="projects"
-      className="font-Archivo flex bg-dark  gap-4  lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex bg-dark shadow-2xl shadow-black  gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]   justify-start items-start w-full h-full min-h-screen min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
@@ -51,7 +57,7 @@ const Projects = () => {
         <div className="flex justify-start items-center w-full h-full ">
           <div className="w-full h-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
-              <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
+              <div className="w-full h-full flex flex-col  justify-start items-start gap-4 md:gap-8">
                 <h2
                   onClick={() => setLineActive(!lineActive)}
                   className="text-3xl font-bold"

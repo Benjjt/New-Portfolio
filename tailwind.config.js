@@ -7,6 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        myBackground: "url('../public/images/backgroundImage.jpg')",
+      },
+      keyframes: {
+        text: {
+          "0%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "100%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        // Add more keyframes as needed for other animations
+      },
+      animation: {
+        text: "text 2s normal forwards linear",
+      },
       colors: {
         dark: "#0c0802",
         tailwindColor: "#0ba5e9",
@@ -31,5 +50,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animation-delay")],
 };

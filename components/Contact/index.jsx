@@ -8,18 +8,27 @@ import TestForm from "./TestForm";
 const Contact = () => {
   const [ref, inView] = useInView();
 
+  let maxHeightFrom = 1;
+  let maxHeightTo = 1;
+
+  if (typeof window !== "undefined") {
+    maxHeightFrom = inView ? 1 : window.innerHeight;
+    maxHeightTo = inView ? window.innerHeight : 1;
+  }
+
   const props = useSpring({
-    from: { maxHeight: inView ? 1 : window.innerHeight },
-    to: { maxHeight: inView ? window.innerHeight : 1 },
+    from: { maxHeight: maxHeightFrom },
+    to: { maxHeight: maxHeightTo },
     config: {
       friction: inView ? 500 : 100,
       velocity: inView ? 100 : 1000,
     },
   });
+
   return (
     <div
       name="contact"
-      className="font-Archivo bg-dark  flex gap-4  lg:gap-12 px-[var(--mobile-padding)] lg:px-[var(--desktop-padding)] pt-10  justify-start items-start w-full h-full   min-w-screen"
+      className="font-Archivo bg-dark  flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start w-full h-full   min-w-screen"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
@@ -39,7 +48,7 @@ const Contact = () => {
         <div className="flex justify-start items-center w-full h-full ">
           <div className="w-full h-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
-              <div className="w-full h-full flex flex-col  justify-start items-start gap-8">
+              <div className="w-full h-full flex flex-col  justify-start items-start gap-4 md:gap-8">
                 <h2
                   onClick={() => setLineActive(!lineActive)}
                   className="text-3xl font-bold"
@@ -54,7 +63,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2  h-full border border-light/50 rounded-xl">
+        <div className="w-full lg:w-1/2  h-full md:border border-light/50 rounded-xl">
           <TestForm />
         </div>
       </div>

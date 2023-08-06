@@ -1,0 +1,36 @@
+/* animations.css */
+
+/* Custom keyframes for the fade-up animation */
+@keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translatex(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animatedDiv {
+    animation: fade-up 1s ease-in-out backwards; /* Use the keyframe animation */
+
+  }
+  
+  /* Custom animation delays */
+  .delay1 {
+    animation-delay: 50ms;
+  }
+  
+  .delay2 {
+    animation-delay: 100ms;
+  }
+  
+  .delay3 {
+    animation-delay: 150ms;
+  }
+  
+  .delay4 {
+    animation-delay: 200ms;
+  }
+  

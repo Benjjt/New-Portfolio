@@ -10,12 +10,10 @@ const HeroBanner = () => {
     to: { opacity: 1 },
   });
 
-  console.log(spring);
-
   return (
     <div
       name="home"
-      className="relative bg-black md:bg-transparent w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
+      className="relative bg-transparent w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
     >
       <div className="w-full h-full flex justify-center items-center  md:items-end md:justify-start  px-[var(--desktop-padding)]  ">
         <div className=" h-full relative flex gap-12 flex-col justify-center items-center md:items-start w-full md:w-2/3">

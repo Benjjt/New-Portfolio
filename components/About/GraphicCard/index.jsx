@@ -13,33 +13,33 @@ const GraphicCard = ({ type }) => {
         type === "three"
           ? "lg:w-1/3 max-w-[30rem] hidden xl:flex "
           : "xl:w-2/3 w-full md:w-full flex "
-      }  border border-white/50 font-Archivo rounded-xl   flex-col justify-start items-center  `}
+      }  md:border border-white/50 font-Archivo rounded-xl   flex-col justify-start items-center  `}
     >
-      <div className="flex justify-between items-center w-full h-[4rem] p-4 border-b border-white/50 ">
+      <div className="hidden md:flex justify-center md:justify-between items-center w-full h-[4rem] py-4 md:p-4 md:border-b border-white/50 ">
         <div className="flex justify-start items-center gap-2">
           <BsChevronLeft className="fill-white w-4 h-4" />
           <BsChevronRight className="fill-white w-4 h-4" />
         </div>
         <div
-          className={`w-full text-white p-2 h-full border border-white/50  rounded-lg ${
+          className={`flex w-full text-white p-2 h-full border border-white/50  rounded-lg ${
             type === "three" ? "max-w-[18rem]" : " max-w-[20rem]"
-          }  flex justify-between items-center`}
+          }   justify-between items-center`}
         >
           <AiTwotoneLock className="fill-white" />
           <span className="select-none">{`${
             type === "three"
-              ? "https://benthorne.net/threejs"
-              : "https://benthorne.net/README"
+              ? "https://benthorne.xyz/threejs"
+              : "https://benthorne.xyz/README"
           }`}</span>
           <IoReloadSharp />
         </div>
-        <AiOutlinePlus className="fill-white w-4 h-4" />
+        <AiOutlinePlus className="fill-white  flex w-4 h-4" />
       </div>
       <div className="flex w-full h-full  ">
-        <div className="hidden  h-full w-[4rem] self-start md:flex flex-col justify-start items-center p-4">
+        <div className="hidden  h-full w-[4rem] self-start /50 md:flex flex-col justify-start items-center p-4">
           <AiOutlineMenu className="fill-white w-6 h-6" />
         </div>
-        <div className="relative overflow-hidden w-full lg:border-l border-white/50 h-full rounded-br-xl">
+        <div className="relative overflow-hidden w-full md:border-l border-white/50 h-full rounded-br-xl">
           {type === "three" ? <ThreeJS /> : <InfoCard />}
         </div>
       </div>

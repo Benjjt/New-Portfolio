@@ -8,16 +8,8 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen min-w-screen bg-dark   text-light ">
-      <div className=" h-full w-full relative">
-        <div className=" w-full h-full absolute overflow-hidden -z-10">
-          <Image
-            // style={{ objectFit: "cover" }}
-            // fill="true"
-            alt="Stylish yellow dots aranged against a black background"
-            src={background}
-          />
-        </div>
+    <main className="min-h-screen min-w-screen   text-light ">
+      <div className=" h-full w-full relative md:bg-myBackground bg-cover  lg:bg-contain  bg-dark ">
         <Navbar />
         <HeroBanner />
         <About />
