@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <main className="min-h-screen min-w-screen   text-light ">
       <div className=" h-full w-full relative md:bg-myBackground bg-cover  lg:bg-contain  bg-dark ">
-        <Navbar />
         <HeroBanner />
         <About />
         <Projects />

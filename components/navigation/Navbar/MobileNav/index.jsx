@@ -21,7 +21,7 @@ const MobileNav = () => {
 
   return (
     <div
-      className={`w-full font-Archivo z-50 fixed border-b border-white/50 rounded-lg flex flex-col justify-start bg-dark items-center transition-height overflow-hidden duration-300 ${getMenuHeightClass()}`}
+      className={`w-full font-Archivo z-50 fixed border-b border-white/50 rounded-lg flex flex-col justify-start bg-dark items-center transition-height text-light overflow-hidden duration-300 ${getMenuHeightClass()}`}
     >
       <div className="z-50 flex justify-between h-[80px] items-center w-full text-md px-[var(--mobile-padding)] bg-dark rounded-b-lg">
         <Image
@@ -39,15 +39,45 @@ const MobileNav = () => {
       {/* Staggered animated links */}
       {menuOpen && (
         <ul className="flex font-bold flex-col justify-start items-start w-full p-[var(--mobile-padding)] gap-4 mt-4 text-6xl">
-          <li className={`text-white ${styles.animatedDiv} ${styles.delay1}`}>
+          <ReactLink
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            to="about"
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+            className={`text-white ${styles.animatedDiv} ${styles.delay1} flex justify-start items-end gap-2 transition-all`}
+          >
             About
-          </li>
-          <li className={`text-white ${styles.animatedDiv}  ${styles.delay2}`}>
+          </ReactLink>
+          <ReactLink
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            to="projects"
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+            className={`text-white ${styles.animatedDiv} ${styles.delay2} flex justify-start items-end gap-2 transition-all`}
+          >
             Projects
-          </li>
-          <li className={`text-white ${styles.animatedDiv}  ${styles.delay3}`}>
+          </ReactLink>
+          <ReactLink
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            to="contact"
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+            className={`text-white ${styles.animatedDiv} ${styles.delay3} flex justify-start items-end gap-2 transition-all`}
+          >
             Contact
-          </li>
+          </ReactLink>
         </ul>
       )}
     </div>

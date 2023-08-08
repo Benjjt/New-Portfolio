@@ -4,6 +4,8 @@ import projectInfo from "./projectInfo";
 import { FaGithubAlt } from "react-icons/fa";
 import { AiOutlineExpandAlt } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
+import { useRouter } from "next/navigation";
+import { MdOpenInNew } from "react-icons/md";
 import Link from "next/link";
 import {
   animated,
@@ -15,6 +17,7 @@ import { BsWindowStack } from "react-icons/bs";
 
 const Projects = () => {
   const [ref, inView] = useInView();
+  const router = useRouter();
 
   let maxHeightFrom = 1;
   let maxHeightTo = 1;
@@ -34,10 +37,14 @@ const Projects = () => {
     },
   });
 
+  const navigateToPage = (projectID) => {
+    router.push(`/projects/${projectID}`);
+  };
+
   return (
     <div
       name="projects"
-      className="font-Archivo flex bg-dark shadow-2xl shadow-black  gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]   justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex bg-dark  gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]   justify-start items-start w-full h-full min-h-screen min-w-screen relative"
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
@@ -129,7 +136,12 @@ const Projects = () => {
                         </span>
                       );
                     })}
-                    <AiOutlineExpandAlt className="ml-auto w-6 h-6" />
+                    <MdOpenInNew
+                      onClick={() => {
+                        navigateToPage(project.projectID);
+                      }}
+                      className="ml-auto w-6 h-6 hover:scale-105 transition-all cursor-pointer hover:fill-highlight"
+                    />
                   </div>
                 </div>
               </div>

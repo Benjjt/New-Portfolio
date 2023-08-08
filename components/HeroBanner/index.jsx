@@ -39,7 +39,7 @@ const HeroBanner = () => {
           />
           <animated.div
             style={spring}
-            className="hidden text-lg leading-10 text-light/70 max-w-[70ch] "
+            className="hidden lg:block text-lg leading-10 text-light/70 max-w-[70ch] "
           >
             I'm a London-based Web Developer who specialises is creating
             exceptional digital experiences. Currently, I am a developer at{" "}
