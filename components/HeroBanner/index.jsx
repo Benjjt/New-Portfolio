@@ -42,7 +42,7 @@ const HeroBanner = () => {
             className="hidden lg:block text-lg leading-10 text-light/70 max-w-[70ch] "
           >
             I am a London-based Web Developer who specialises is creating
-            exceptional digital experiences. Currently, I am a developer at
+            exceptional digital experiences. Currently, I am a developer at{" "}
             <span className="text-highlight">
               <a target="_blank" href="https://canverse.io">
                 canVERSE
