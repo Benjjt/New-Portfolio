@@ -6,10 +6,6 @@ import Image from "next/image";
 import TechItem from "./TechItem";
 
 const TechBanner = () => {
-  useEffect(() => {
-    console.log(TechArray);
-  }, [TechArray]);
-
   return (
     <div className="flex justify-evenly w-full items-center   ">
       {TechArray.map((item, index) => {

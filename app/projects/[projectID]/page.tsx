@@ -80,7 +80,10 @@ export default function Page({ params }: { params: { projectID: string } }) {
             <ul className="flex flex-col justify-start items-start gap-4 h-full w-full">
               {Object.keys(currentProject.features).map((feature) => {
                 return (
-                  <li className="flex flex-col justify-start items-start gap-2 w-full border border-white/50 rounded-lg p-4">
+                  <li
+                    key={feature}
+                    className="flex flex-col justify-start items-start gap-2 w-full border border-white/50 rounded-lg p-4"
+                  >
                     <span className="font-bold w-full  rounded-lg flex justify-between items-center">
                       <span>{feature}</span>
                       {featureOpen === feature ? (
