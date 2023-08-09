@@ -8,8 +8,8 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen min-w-screen   text-light ">
-      <div className=" h-full w-full relative md:bg-myBackground bg-cover  lg:bg-contain  bg-dark ">
+    <main className="min-h-screen min-w-screen   text-light bg-dark ">
+      <div className=" h-full w-full  relative md:bg-myBackground bg-cover  lg:bg-contain  bg-dark ">
         <HeroBanner />
         <About />
         <Projects />

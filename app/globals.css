@@ -6,6 +6,8 @@
   --desktop-padding: 6rem;
   --desktop-maxWidth: 2000px;
   --mobile-padding: 2rem;
+  --desktop-max: 2000px;
+  --desktop-max-h: 1000px
 }
 
 body {

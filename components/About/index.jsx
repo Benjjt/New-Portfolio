@@ -12,44 +12,41 @@ import {
 
 const About = () => {
   const [ref, inView] = useInView();
-
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
+  const containerRef = useRef(null);
 
   const props = useSpring({
-    from: { maxHeight: inView ? 1 : 1000 },
-    to: { maxHeight: inView ? 1000 : 1 },
+    from: { maxHeight: inView ? 1 : containerRef.current?.clientHeight },
+    to: { maxHeight: inView ? containerRef.current?.clientHeight : 1 },
     config: {
-      friction: inView ? 500 : 100,
-      velocity: inView ? 100 : 1000,
+      friction: inView ? 400 : 0,
     },
   });
 
   return (
     <div
       name="about"
-      className="font-Archivo flex gap-4 bg-black md:bg-transparent lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start w-full h-full min-h-screen min-w-screen"
+      className="font-Archivo flex gap-4 bg-black md:bg-transparent lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start  h-screen  w-screen m-auto max-w-[var(--desktop-max)] max-h-[var(--desktop-max-h)]"
     >
-      <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative ">
-        <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />
-        <div className="absolute border-l border-white h-[2rem] -top-16 w-[4px] bg-gradient-to-b from-white to-highlight blur-md " />
+      <div className="hidden md:flex flex-col justify-start items-center  h-full gap-10 relative ">
+        {/* <div className="absolute border-l border-white h-[2rem] -top-16 w-[2px] bg-gradient-to-b from-white to-highlight  " />
+        <div className="absolute border-l border-white h-[2rem] -top-16 w-[4px] bg-gradient-to-b from-white to-highlight blur-md " /> */}
 
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
           <div className="w-full  h-full absolute bg-highlight/50 blur-lg rounded-full bottom-0 left-0" />
           <BiUser className="w-8 h-8 z-20" />
         </div>
-
-        <animated.div
-          ref={ref}
-          style={props}
-          className=" w-[2px] h-full bg-gradient-to-b from-highlight to-cyan-500   rounded-lg"
-        >
-          <div className="w-[4px] h-full bg-gradient-to-b from-highlight to-cyan-500 blur-md rounded-lg " />
-        </animated.div>
+        <div ref={containerRef} className="h-full">
+          <animated.div
+            ref={ref}
+            style={props}
+            className=" w-[2px] h-full bg-gradient-to-b from-highlight to-cyan-500   rounded-lg"
+          >
+            <div className="w-[4px] h-full bg-gradient-to-b from-highlight to-cyan-500 blur-md rounded-lg " />
+          </animated.div>
+        </div>
       </div>
       <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
-        <div className="flex justify-start items-center w-full h-full ">
+        <div className="flex justify-start items-center w-full  ">
           <div className="w-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
               <div className="w-full h-full flex flex-col  justify-start items-start gap-4 md:gap-8">

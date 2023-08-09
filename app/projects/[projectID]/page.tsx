@@ -48,8 +48,8 @@ export default function Page({ params }: { params: { projectID: string } }) {
   }
   return (
     currentProject && (
-      <div className="w-screen min-h-screen relative flex flex-col pt-[140px]  justify-center items-center md:bg-myBackground bg-cover bg-dark  lg:bg-contain font-Archivo p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] text-white ">
-        <div className="flex-col flex lg:flex-row justify-between items-center h-full w-full gap-8">
+      <div className="w-screen min-h-screen relative flex flex-col pt-[140px]  justify-center items-center md:bg-myBackground bg-cover bg-dark  lg:bg-contain font-Archivo p-[var(--mobile-padding)] lg:p-[var(--desktop-padding)] text-white  ">
+        <div className="flex-col flex lg:flex-row justify-between items-start h-full w-full gap-8 m-auto max-w-[var(--desktop-max)]">
           <div className="flex bg-dark/5 backdrop-blur-sm flex-col justify-start lg:border-r border-white/50 items-start  gap-8   h-full w-full lg:w-1/2 lg:p-8">
             <div className="lg:hidden w-full   bg-dark  relative  border-white/50 border-4 rounded-xl overflow-hidden">
               <Image
@@ -103,7 +103,7 @@ export default function Page({ params }: { params: { projectID: string } }) {
               })}
             </ul>
           </div>
-          <div className="flex   flex-col justify-between items-start  gap-4 rounded-xl h-full w-full lg:w-1/2 ">
+          <div className="flex   flex-col justify-between items-start  gap-4 rounded-xl h-full  w-full lg:w-1/2 ">
             <div className="hidden lg:flex w-full  bg-dark  relative  border-white/50 border-4 rounded-xl overflow-hidden">
               <Image
                 alt="change this"
@@ -144,7 +144,7 @@ export default function Page({ params }: { params: { projectID: string } }) {
             ) : (
               ""
             )}
-            <div className="flex-col flex md:flex-row  justify-between md:items-end w-full gap-4">
+            <div className="flex-col flex md:flex-row  justify-between md:items-end  w-full gap-4">
               <div className="flex flex-col justify-start items-start gap-4">
                 <h3 className="text-xl font-bold">Technology</h3>
                 <ul className="flex justify-between items-center gap-4">

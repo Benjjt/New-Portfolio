@@ -18,22 +18,13 @@ import { BsWindowStack } from "react-icons/bs";
 const Projects = () => {
   const [ref, inView] = useInView();
   const router = useRouter();
-
-  let maxHeightFrom = 1;
-  let maxHeightTo = 1;
-
-  if (typeof window !== "undefined") {
-    // Code inside this block will only execute in the browser environment
-    maxHeightFrom = inView ? 1 : window.innerHeight;
-    maxHeightTo = inView ? window.innerHeight : 1;
-  }
+  const containerRef = useRef(null);
 
   const props = useSpring({
-    from: { maxHeight: maxHeightFrom },
-    to: { maxHeight: maxHeightTo },
+    from: { maxHeight: inView ? 1 : containerRef.current?.clientHeight },
+    to: { maxHeight: inView ? containerRef.current?.clientHeight : 1 },
     config: {
-      friction: inView ? 500 : 100,
-      velocity: inView ? 100 : 1000,
+      friction: inView ? 250 : 0,
     },
   });
 
@@ -44,24 +35,25 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="font-Archivo flex bg-dark  gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]   justify-start items-start w-full h-full min-h-screen min-w-screen relative"
+      className="font-Archivo flex bg-dark  gap-4   lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]   justify-start items-start w-full h-screen  min-w-screen relative m-auto max-w-[var(--desktop-max)] max-h-[var(--desktop-max-h)]"
     >
-      <div className="hidden md:flex flex-col justify-start items-center  h-screen gap-10 relative  ">
+      <div className="hidden md:flex flex-col justify-start items-center   h-full gap-10 relative   ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
           <div className="w-full  h-full absolute bg-cyan-500/50 blur-lg rounded-full bottom-0 left-0" />
           <BsWindowStack className="w-8 h-8 z-20 " />
         </div>
-
-        <animated.div
-          ref={ref}
-          style={props}
-          className="w-[2px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6]  rounded-lg"
-        >
-          <div className="w-[4px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6] blur-md rounded-lg " />
-        </animated.div>
+        <div ref={containerRef} className="h-full ">
+          <animated.div
+            ref={ref}
+            style={props}
+            className="w-[2px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6]  rounded-lg"
+          >
+            <div className="w-[4px] h-full bg-gradient-to-b from-cyan-500 to-[#773fc6] blur-md rounded-lg " />
+          </animated.div>
+        </div>
       </div>
       <div className="font-Archivo flex flex-col gap-12  justify-start items-center w-full h-full  ">
-        <div className="flex justify-start items-center w-full h-full ">
+        <div className="flex justify-start items-center w-full  ">
           <div className="w-full h-full  flex flex-col justify-start items-start ">
             <div className="flex justify-start items-start gap-8">
               <div className="w-full h-full flex flex-col  justify-start items-start gap-4 md:gap-8">
