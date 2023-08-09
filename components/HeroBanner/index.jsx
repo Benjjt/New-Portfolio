@@ -15,8 +15,8 @@ const HeroBanner = () => {
       name="home"
       className="relative bg-transparent w-screen h-full  min-h-screen  flex justify-center items-center  font-Archivo overflow-hidden "
     >
-      <div className="w-full h-full flex justify-center items-center  md:items-end md:justify-start  px-[var(--desktop-padding)]  ">
-        <div className=" h-full relative flex gap-12 flex-col justify-center items-center md:items-start w-full md:w-2/3">
+      <div className="w-full h-full gap-12  flex flex-col md:flex-row justify-between md:justify-start items-center  md:items-end px-[var(--mobile-padding)]   md:px-[var(--desktop-padding)]  ">
+        <div className=" h-full  relative flex gap-12 flex-col justify-center items-center md:items-start  w-full md:w-2/3">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially

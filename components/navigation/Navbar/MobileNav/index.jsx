@@ -3,14 +3,17 @@ import React, { useState, useEffect } from "react";
 import styles from "./MobileNav.module.css";
 import Image from "next/image";
 import { Link as ReactLink } from "react-scroll";
+import Link from "next/link";
 import bensPortfolioEditLight from "../../../../public/images/logos/bensPortfolioEditWhite.png";
-import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
+import { IoMenuSharp, IoCloseSharp, IoHomeOutline } from "react-icons/io5";
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineFilePdf, AiOutlineArrowUp } from "react-icons/ai";
+import { usePathname } from "next/navigation";
+import Links from "../../Links";
 
 const MobileNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const pathname = usePathname();
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -30,10 +33,16 @@ const MobileNav = () => {
           height={50}
           alt="Ben Thorne's portfolio logo"
         />
-        {menuOpen ? (
-          <IoCloseSharp onClick={() => toggleMenu()} className="w-8 h-8" />
+        {pathname === "/" ? (
+          menuOpen ? (
+            <IoCloseSharp onClick={() => toggleMenu()} className="w-8 h-8" />
+          ) : (
+            <IoMenuSharp onClick={() => toggleMenu()} className="w-8 h-8" />
+          )
         ) : (
-          <IoMenuSharp onClick={() => toggleMenu()} className="w-8 h-8" />
+          <Link href="/">
+            <IoHomeOutline className="w-8 h-8" />
+          </Link>
         )}
       </div>
       {/* Staggered animated links */}
@@ -78,6 +87,7 @@ const MobileNav = () => {
           >
             Contact
           </ReactLink>
+          <Links type={"mobile"} />
         </ul>
       )}
     </div>

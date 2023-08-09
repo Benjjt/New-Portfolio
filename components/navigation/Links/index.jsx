@@ -4,6 +4,8 @@ import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineFilePdf, AiOutlineArrowUp } from "react-icons/ai";
 import { animated, useSpring } from "@react-spring/web";
 import { Link as ReactLink } from "react-scroll";
+import styles from "../Navbar/MobileNav/MobileNav.module.css";
+import Link from "next/link";
 
 const Links = ({ type }) => {
   const props = useSpring({
@@ -19,10 +21,10 @@ const Links = ({ type }) => {
     downloadLink.click();
   };
 
-  return (
+  return type != "mobile" ? (
     <animated.div
       style={props}
-      className="hidden md:flex absolute bottom-[4rem] right-[var(--desktop-padding)]  flex-col items-center gap-8 bg-dark py-8 px-4 rounded-full shadow-lg"
+      className="hidden lg:flex absolute bottom-[4rem] right-[var(--desktop-padding)]  flex-col items-center gap-8 bg-dark py-8 px-4 rounded-full shadow-lg"
     >
       {type === "bottom" ? (
         <ReactLink
@@ -38,8 +40,12 @@ const Links = ({ type }) => {
       ) : (
         <span className="border border-light rotate-90 w-5" />
       )}
-      <FaGithubAlt className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
-      <FaLinkedinIn className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
+      <a target="_blank" href="https://github.com/Benjjt">
+        <FaGithubAlt className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/benjamin-thorne101/">
+        <FaLinkedinIn className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer" />
+      </a>
       <AiOutlineFilePdf
         onClick={() => {
           handleDownload();
@@ -47,6 +53,23 @@ const Links = ({ type }) => {
         className="w-6 h-6 hover:fill-highlight transition-all cursor-pointer"
       />
     </animated.div>
+  ) : (
+    <div
+      className={`flex  justify-start items-center gap-8 bg-dark py-8  rounded-full shadow-lg  ${styles.animatedDiv} ${styles.delay4}`}
+    >
+      <a target="_blank" href="https://github.com/Benjjt">
+        <FaGithubAlt className="w-8 h-8 hover:fill-highlight transition-all cursor-pointer" />
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/benjamin-thorne101/">
+        <FaLinkedinIn className="w-8 h-8 hover:fill-highlight transition-all cursor-pointer" />
+      </a>
+      <AiOutlineFilePdf
+        onClick={() => {
+          handleDownload();
+        }}
+        className="w-8 h-8 hover:fill-highlight transition-all cursor-pointer"
+      />
+    </div>
   );
 };
 

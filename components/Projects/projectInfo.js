@@ -26,7 +26,7 @@ const projectInfo = [
     codeAvailable: true,
     livesiteAvailable: true,
     screenshot: portfolio,
-    gitHubLink: "https://github.com/Benjjt/sound-sauce",
+    gitHubLink: "https://github.com/Benjjt/New-Portfolio",
     siteLink: "https://benthorne.xyz",
     description: "A portfolio of my complete and ongoing work.",
     descriptionLong:
