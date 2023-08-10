@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoCheckmarkCircleSharp, IoAlertCircleSharp } from "react-icons/io5";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const TestForm = () => {
   const [contact, setContact] = useState({
@@ -12,6 +13,7 @@ const TestForm = () => {
     accessKey: `6320e144-7696-405a-9ac6-7713f4c19627`, // get your access key from https://www.staticforms.xyz
   });
 
+  const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState({
     type: "",
     message: "",
@@ -25,6 +27,8 @@ const TestForm = () => {
     setContact({ ...contact, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
+    console.log("handle submit called");
+    setLoading(true);
     e.preventDefault();
     try {
       const res = await fetch("https://api.staticforms.xyz/submit", {
@@ -41,11 +45,13 @@ const TestForm = () => {
           type: "success",
           message: "Thank you for reaching out to me!",
         });
+        setLoading(false);
       } else {
         setResponse({
           type: "error",
           message: json.message,
         });
+        setLoading(false);
       }
     } catch (e) {
       console.log("An error occurred", e);
@@ -53,6 +59,7 @@ const TestForm = () => {
         type: "error",
         message: "An error occured while submitting the form",
       });
+      setLoading(false);
     }
   };
   return (
@@ -112,15 +119,31 @@ const TestForm = () => {
       </div>
       <div className="flex justify-start items-center gap-2 mt-auto w-full ">
         <button
-          className="bg-light transition-all text-dark px-4 py-1 rounded-md  hover:bg-[#773fc6] hover:text-light w-1/2  md:w-[8rem]"
+          className={`bg-light relative transition-all text-dark px-4 py-1 rounded-md   w-1/2  md:w-[8rem] ${
+            loading
+              ? "bg-white/50 text-light"
+              : "bg-white hover:bg-[#773fc6] hover:text-light"
+          }`}
           type="submit"
+          disabled={loading}
         >
+          {loading && (
+            <AiOutlineLoading3Quarters className="fill-[#773fc6] absolute w-6 h-6 animate-spin left-0 right-0 top-0 bottom-0 m-auto" />
+          )}
           Submit
         </button>
         <button
+          className={` relative transition-all border  px-4 py-1 rounded-md   w-1/2  md:w-[8rem] ${
+            loading
+              ? "bg-dark/50 text-light  border-white/50"
+              : "bg-dark border-white/50 hover:bg-[#773fc6] hover:text-light"
+          }`}
           type="reset"
-          className="bg-dark transition-all text-light px-4 py-1 rounded-md border hover:border-[#773fc6] w-1/2  md:w-[8rem]"
+          disabled={loading}
         >
+          {loading && (
+            <AiOutlineLoading3Quarters className="fill-[#773fc6] absolute w-6 h-6 animate-spin left-0 right-0 top-0 bottom-0 m-auto" />
+          )}
           Clear
         </button>
       </div>
