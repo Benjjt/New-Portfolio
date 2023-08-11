@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { animated, useSpring, useInView } from "@react-spring/web";
 import { IoMailOpenOutline } from "react-icons/io5";
 import Links from "../navigation/Links";
-import TestForm from "./TestForm";
+import NewForm from "./NewForm";
 
 const Contact = () => {
   const [ref, inView] = useInView();
@@ -58,7 +58,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2  h-full md:border border-light/50 rounded-xl">
-          <TestForm />
+          <NewForm />
         </div>
       </div>
       <Links type={"bottom"} />
