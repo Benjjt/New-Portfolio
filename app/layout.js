@@ -1,5 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/navigation/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "Ben Thorne's Portfolio",

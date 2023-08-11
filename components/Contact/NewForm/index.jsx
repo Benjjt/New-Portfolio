@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { IoAlertCircleOutline } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NewForm = () => {
   const [loading, setLoading] = useState(false);
@@ -19,13 +21,39 @@ const NewForm = () => {
     setLoading(true);
     try {
       await axios.post("/api/send-mail", data);
-      alert("Email sent successfully!");
+      notifySuccess();
       setLoading(false);
       reset();
     } catch (error) {
       setLoading(false);
-      alert("An error occurred while sending the email.");
+      notifyError();
     }
+  };
+
+  const notifyError = () => {
+    toast.error("There was an issue sending your email!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const notifySuccess = () => {
+    toast.success("Email Sent!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
@@ -110,6 +138,18 @@ const NewForm = () => {
           Reset Form
         </button>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </form>
   );
 };
