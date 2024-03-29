@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { animated, useSpring, useInView } from "@react-spring/web";
 import { IoMailOpenOutline } from "react-icons/io5";
 import Links from "../navigation/Links";
-import NewForm from "./NewForm";
+import HubSpotForm from "./HubspotForm";
 
 const Contact = () => {
   const [ref, inView] = useInView();
@@ -21,7 +21,7 @@ const Contact = () => {
     <div
       name="contact"
       ref={containerRef}
-      className="font-Archivo bg-dark  flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start w-full h-full lg:h-screen   min-w-screen m-auto max-w-[var(--desktop-max)] max-h-[var(--desktop-max-h)]"
+      className="font-Archivo bg-dark  flex gap-4  lg:gap-12 p-[var(--mobile-padding)] lg:px-[var(--desktop-padding)]  justify-start items-start w-full h-full   min-w-screen m-auto max-w-[var(--desktop-max)] "
     >
       <div className="hidden md:flex flex-col justify-start items-center  h-full gap-10 relative  ">
         <div className="w-[2.5rem] h-[2.5rem] relative  flex justify-center items-center">
@@ -58,7 +58,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2  h-full md:border border-light/50 rounded-xl">
-          <NewForm />
+          <HubSpotForm />
         </div>
       </div>
       <Links type={"bottom"} />

@@ -3,11 +3,13 @@ import soundsauce from "../../public/images/projects/soundsauce/ssScreenshot.jpg
 import portfolio from "../../public/images/projects/portfolio/portfolioScreen.jpg";
 import canverse from "../../public/images/projects/canverse/canverseScreen.jpg";
 import NFTGalley from "../../public/images/projects/NFTGallery/NFTGallery.jpg";
+import pps from "../../public/images/projects/pps/screenshot.jpg";
 
 //project logos
 import ssLogo from "../../public/images/projects/soundsauce/ssLogo.svg";
 import portfolioLogo from "../../public/images/projects/portfolio/portfolioLogo.png";
 import canverselogo from "../../public/images/projects/canverse/canverselogo.png";
+import ppsLogo from "../../public/images/projects/pps/lightLogo.png";
 
 //tech logos
 import tailwindLogo from "../../public/images/logos/tailwindLogo.png";
@@ -18,6 +20,30 @@ import sassLogo from "../../public/images/logos/Sass_logo.png";
 import typescriptLogo from "../../public/images/logos/tsLogo.png";
 
 const projectInfo = [
+  {
+    title: "PPS For Business",
+    projectLogo: ppsLogo,
+    projectID: "pps",
+    codeAvailable: false,
+    livesiteAvailable: true,
+    screenshot: pps,
+    gitHubLink: "",
+    siteLink: "https://ppsforbusiness.com",
+    description: "A marketing website for a B2B energy saving business.",
+    descriptionLong:
+      "After an initial assessment into the prexisiting website, recent business growth and the need for more advanced features, I redesigned and coded the website for PPS. ",
+    features: {
+      "Logo Design":
+        "Taking the 'mobile first' approach allowed me to ensure I'm reaching the largest audience while still providing a consistent user experience. ",
+      "GSAP Animation":
+        "I relish every oportunity to play with new CSS animation libraries. All animations in this site are handled using react-spring, a lightweight and intuative CSS animation library.",
+    },
+    technology: [
+      { name: "Tailwind", color: "#0ba5e9", logo: tailwindLogo },
+      { name: "Next.js", color: "#ededed", logo: nextLogo },
+      { name: "Typescript", color: "#3077c6", logo: typescriptLogo },
+    ],
+  },
   {
     title: "My Portfolio",
     projectLogo: portfolioLogo,
@@ -77,7 +103,8 @@ const projectInfo = [
     screenshot: NFTGalley,
     link: "tbc",
     codeAvailable: false,
-    livesiteAvailable: false,
+    livesiteAvailable: true,
+    siteLink: "https://gallery.canverse.io/",
     features: {
       "Attribute-Based Filtering":
         "Filters are established dynamically using the first server-side request to a custom API ",
@@ -86,7 +113,6 @@ const projectInfo = [
       "Cloudflare Image Optimisation":
         "Cloudflare is used to host PFP images and deliver suitable resolutions depending on a users screen size. ",
     },
-    siteLink: "https://github.com/Benjjt/sound-sauce",
     description: "Sort and Filter NFTs based on their attributes.",
     descriptionLong:
       "Anticipating the release of an NFT collection from canVERSE, procedurally generated chess sets, me and Mike Bland (backend developer for canVERSE) set about creating an efficient web app for exploring the 10,000 PFPs on offer.",

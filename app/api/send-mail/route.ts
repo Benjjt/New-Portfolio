@@ -26,7 +26,7 @@ export async function POST(request: Request) {
                       <h1 style="color: #333333;">From: ${name}</h1>
                   </td>
               </tr>
-      
+
               <tr>
                   <td style="text-align: left; padding-top: 20px;">
                   <h2 style="color: #333333;">Message:</h2>
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       </html>`,
     });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return NextResponse.error;
   }
 

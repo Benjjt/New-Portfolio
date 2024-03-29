@@ -66,14 +66,6 @@ const InfoCard = () => {
             <ul className="flex flex-col justify-start items-start gap-4 mt-2 w-full ">
               <li className="flex flex-col justify-start items-start border-b border-cyan-500/50 w-full ">
                 <span className="font-bold">
-                  BrainStation | Data Science (Part Time)
-                </span>
-                <span className="text-white/50">
-                  AUG 2023 - OCT 2023, LONDON, UK
-                </span>
-              </li>
-              <li className="flex flex-col justify-start items-start border-b border-cyan-500/50 w-full ">
-                <span className="font-bold">
                   BrainStation | Diploma, Web Development
                 </span>
                 <span className="text-white/50">
@@ -98,9 +90,17 @@ const InfoCard = () => {
             </span>
             <ul className="flex flex-col justify-start items-start gap-4 mt-2 ">
               <li className="flex flex-col justify-start items-start border-b border-highlight/50 w-full">
+                <span className="font-bold">
+                  Wavemaker | Addressable Web Developer
+                </span>
+                <span className="text-white/50">
+                  NOV 2023 - PRESENT, LONDON UK
+                </span>
+              </li>
+              <li className="flex flex-col justify-start items-start border-b border-highlight/50 w-full">
                 <span className="font-bold">canVERSE | Web3 Developer</span>
                 <span className="text-white/50">
-                  JAN 2023 - PRESENT, LONDON, UK
+                  JAN 2023 - OCT 2023, LONDON, UK
                 </span>
               </li>
               <li className="flex flex-col justify-start items-start border-b border-highlight/50 w-full">
@@ -109,14 +109,6 @@ const InfoCard = () => {
                 </span>
                 <span className="text-white/50">
                   APR 2022 - JAN 2023, LONDON, UK
-                </span>
-              </li>
-              <li className="flex flex-col justify-start items-start border-b border-highlight/50 w-full">
-                <span className="font-bold">
-                  BrainStation | Industry Mentor (Part Time)
-                </span>
-                <span className="text-white/50">
-                  FEB 202 - PRESENT, LONDON UK
                 </span>
               </li>
             </ul>

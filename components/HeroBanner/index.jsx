@@ -39,16 +39,10 @@ const HeroBanner = () => {
           />
           <animated.div
             style={spring}
-            className="hidden lg:block text-lg leading-10 text-light/70 max-w-[70ch] "
+            className="hidden lg:block text-lg leading-10 text-light/70 max-w-[80ch] "
           >
             I am a London-based Web Developer who specialises is creating
-            exceptional digital experiences. Currently, I am a developer at{" "}
-            <span className="text-highlight">
-              <a target="_blank" href="https://canverse.io">
-                canVERSE
-              </a>
-            </span>{" "}
-            focused on building accessible Web-3 tools for NFT gaming.
+            exceptional digital experiences.
           </animated.div>
         </div>
       </div>
